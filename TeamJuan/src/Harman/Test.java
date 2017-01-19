@@ -1,5 +1,5 @@
 package Harman;
 
-public class main {
+public class Test {
 //test
 }
