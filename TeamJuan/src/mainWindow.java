@@ -40,7 +40,7 @@ public final class mainWindow {
     	myAboutButton = new JButton("About...");
     	myAboutButton.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-				JOptionPane.showMessageDialog(null, "", 
+				JOptionPane.showMessageDialog(null, "We Are Team Juan!\n-Pamaldeep Dhillon - \n-Kevin Nguyen - I like to ride bikes. ", 
 						"About", JOptionPane.INFORMATION_MESSAGE);
     		}
     	});
