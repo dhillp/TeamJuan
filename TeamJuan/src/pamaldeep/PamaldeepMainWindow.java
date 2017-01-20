@@ -41,7 +41,12 @@ public final class PamaldeepMainWindow {
     	myAboutButton = new JButton("About...");
     	myAboutButton.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-				JOptionPane.showMessageDialog(null, "We Are Team Juan!\n-Pamaldeep Dhillon - \n-Kevin Nguyen - I like to ride bikes. ", 
+				JOptionPane.showMessageDialog(null, "We Are Team Juan!"
+						+ "\n-Pamaldeep Dhillon - "
+						+ "\n-Tung Kong - "
+						+ "\n-Kevin Nguyen - I like to ride bikes."
+						+ "\n-Harmandeep Singh - "
+						+ "\n-Cynthia Tran - ", 
 						"About", JOptionPane.INFORMATION_MESSAGE);
     		}
     	});
