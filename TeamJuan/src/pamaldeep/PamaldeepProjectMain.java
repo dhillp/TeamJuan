@@ -1,12 +1,13 @@
-package Pamal;
+package pamaldeep;
 import java.awt.EventQueue;
 
-public class projectMain {
+public class PamaldeepProjectMain {
 
 	public static void main(String[] thAargs) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
-				new mainWindow();
+				new PamaldeepMainWindow();
 			}
 		});
 	}
