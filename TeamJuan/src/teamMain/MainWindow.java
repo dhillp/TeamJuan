@@ -43,7 +43,7 @@ public final class MainWindow {
     		public void actionPerformed(ActionEvent theEvent) {
 				JOptionPane.showMessageDialog(null, "We Are Team Juan!"
 						+ "\n-Pamaldeep Dhillon - "
-						+ "\n-Tung Kong - "
+						+ "\n-Tung Kong - I like ice cream."
 						+ "\n-Kevin Nguyen - I like to ride bikes."
 						+ "\n-Harmandeep Singh - "
 						+ "\n-Cynthia Tran - I have a dog.", 
