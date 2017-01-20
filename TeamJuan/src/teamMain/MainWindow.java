@@ -41,16 +41,12 @@ public final class MainWindow {
     	myAboutButton = new JButton("About...");
     	myAboutButton.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-<<<<<<< HEAD:TeamJuan/src/Pamal/mainWindow.java
-				JOptionPane.showMessageDialog(null, "We Are Team Juan!\n-Pamaldeep Dhillon - \n-Kevin Nguyen - I like to ride bikes. \n-Cynthia Tran - I have a dog.", 
-=======
 				JOptionPane.showMessageDialog(null, "We Are Team Juan!"
 						+ "\n-Pamaldeep Dhillon - "
 						+ "\n-Tung Kong - "
 						+ "\n-Kevin Nguyen - I like to ride bikes."
 						+ "\n-Harmandeep Singh - "
-						+ "\n-Cynthia Tran - ", 
->>>>>>> ca93f6cd431f61ef7fe17cef04257c4f6d8a8f8b:TeamJuan/src/teamMain/MainWindow.java
+						+ "\n-Cynthia Tran - I have a dog.", 
 						"About", JOptionPane.INFORMATION_MESSAGE);
     		}
     	});
