@@ -1,4 +1,4 @@
-package Pamal;
+package pamaldeep;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -10,14 +10,14 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public final class mainWindow {
+public final class PamaldeepMainWindow {
 	
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();	
 	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();	
     private JButton myAboutButton;
     private JFrame myFrame;
     
-    public mainWindow() {
+    public PamaldeepMainWindow() {
 		myFrame = new JFrame();
 		myFrame.setTitle("Welcome Window");
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,7 +41,12 @@ public final class mainWindow {
     	myAboutButton = new JButton("About...");
     	myAboutButton.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-				JOptionPane.showMessageDialog(null, "We Are Team Juan!\n-Pamaldeep Dhillon - \n-Kevin Nguyen - I like to ride bikes. ", 
+				JOptionPane.showMessageDialog(null, "We Are Team Juan!"
+						+ "\n-Pamaldeep Dhillon - "
+						+ "\n-Tung Kong - "
+						+ "\n-Kevin Nguyen - I like to ride bikes."
+						+ "\n-Harmandeep Singh - "
+						+ "\n-Cynthia Tran - ", 
 						"About", JOptionPane.INFORMATION_MESSAGE);
     		}
     	});
