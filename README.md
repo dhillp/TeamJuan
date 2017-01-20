@@ -9,7 +9,7 @@
 
 ### Links:
  + Weekly Minutes and Task Matrices:
-   - [1/12/2017](https://github.com/dhillp/minutes.1.12.2017.pdf)
+   - [1/12/2017](TeamJuan/minutes.1.12.2017.pdf)
  + Check-ins and Deliverables
  + Group email
  + Other links
