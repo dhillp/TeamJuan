@@ -1,4 +1,4 @@
-package TeamMain;
+package teamMain;
 import java.awt.EventQueue;
 
 public class ProjectMain {

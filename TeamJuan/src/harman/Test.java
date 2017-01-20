@@ -1,4 +1,4 @@
-package Harman;
+package harman;
 
 public class Test {
 	//test
