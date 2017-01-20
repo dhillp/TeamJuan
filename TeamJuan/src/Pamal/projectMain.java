@@ -1,3 +1,4 @@
+package Pamal;
 import java.awt.EventQueue;
 
 public class projectMain {
