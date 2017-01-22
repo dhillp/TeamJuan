@@ -42,7 +42,7 @@ public final class MainWindow {
     	myAboutButton.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
 				JOptionPane.showMessageDialog(null, "We Are Team Juan!"
-						+ "\n-Pamaldeep Dhillon - "
+						+ "\n-Pamaldeep Dhillon - I like to watch movies."
 						+ "\n-Tung Kong - I like ice cream."
 						+ "\n-Kevin Nguyen - I like to ride bikes."
 						+ "\n-Harmandeep Singh - "
