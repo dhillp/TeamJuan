@@ -1,13 +1,13 @@
-## Welcome
+# Welcome
 
-### Team Members:
+## Team Members:
  + Pamaldeep Singh Dhillon
  + Tung Kong
  + Kevin T Nguyen
  + Harmandeep Singh
  + Cynthia Tran
 
-### Links:
+## Links:
  + Weekly Minutes and Task Matrices:
    - [1/12/2017](minutes.1.12.2017.pdf)
    - [1/19/2017](minutes.1.19.2017.pdf)
