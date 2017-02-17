@@ -15,5 +15,6 @@
    * [Deliverable 0](Deliverable0.pdf)
    * [Deliverable 1](Deliverable1.pdf)
    * [Check-In 2](UML.pdf)
+   * [Check-In 3](GUI UML.pdf)
  * Contact us: [official.teamjuan@gmail.com](mailto:official.teamjuan@gmail.com)
  * Other links:
