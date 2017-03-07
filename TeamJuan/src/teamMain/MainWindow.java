@@ -30,7 +30,7 @@ public final class MainWindow {
     }
     
     private void createPanel() {
-    	createButtons();
+    	createButtons(); 
     	JPanel panel1 = new JPanel();
     	panel1.add(myAboutButton);
     	myFrame.getContentPane().add(panel1, BorderLayout.NORTH);
