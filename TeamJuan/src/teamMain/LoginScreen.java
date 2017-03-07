@@ -27,7 +27,7 @@ public final class LoginScreen {
     private JTextField myUsername;
     
     private JPasswordField myPassword;
-    /** The frame for this application's GUI.*/
+    
     private JFrame myFrame;
     
     public LoginScreen() {
