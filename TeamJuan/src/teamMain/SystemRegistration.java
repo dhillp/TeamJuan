@@ -11,11 +11,14 @@ public class SystemRegistration {
 	private void readFile(){
 		
 	}
+	
 	private void writeFile(){
 		
 	}
-	private void addUser(){
+	
+	private void makeUser(){
 		
 	}
+	
 
 }
