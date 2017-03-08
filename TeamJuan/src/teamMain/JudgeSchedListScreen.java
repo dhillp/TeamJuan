@@ -15,7 +15,7 @@ public class JudgeSchedListScreen {
     //comment
 	public JudgeSchedListScreen() {
 		myFrame = new JFrame();
-		myFrame.setTitle("Login Window");
+		myFrame.setTitle("Judging Schedule");
 		myFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		myFrame.setSize(500, 500);
 		myFrame.setLocation(SCREEN_SIZE.width / 2 - myFrame.getWidth() / 2,
