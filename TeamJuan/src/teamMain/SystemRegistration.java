@@ -1,8 +1,20 @@
 package teamMain;
 
-public class CreateAccountScreen {
+import java.io.File;
+
+public class SystemRegistration {
 	
-	public CreateAccountScreen(){
+	public SystemRegistration(){
+		
+	}
+	
+	private void readFile(){
+		
+	}
+	private void writeFile(){
+		
+	}
+	private void addUser(){
 		
 	}
 
