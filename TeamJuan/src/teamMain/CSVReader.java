@@ -1,4 +1,4 @@
-package cynthia;
+package teamMain;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
