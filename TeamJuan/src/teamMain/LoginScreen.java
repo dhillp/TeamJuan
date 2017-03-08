@@ -24,6 +24,8 @@ public final class LoginScreen {
 
     private JButton myRegisterButton;
     
+    private JButton myJSchedButton;
+    
     private JTextField myUsername;
     
     private JPasswordField myPassword;
@@ -69,6 +71,7 @@ public final class LoginScreen {
     	JPanel panel2 = new JPanel();
     	panel2.add(myLoginButton);
     	panel2.add(myRegisterButton);
+    	panel2.add(myJSchedButton);
     	JPanel panel3 = new JPanel();
     	myFrame.getContentPane().add(panel3, BorderLayout.PAGE_START);
     	myFrame.getContentPane().add(panel, BorderLayout.CENTER);
@@ -77,16 +80,20 @@ public final class LoginScreen {
     private void createButtons() {
     	myLoginButton = new JButton("Login");
     	myRegisterButton = new JButton("Register");
+    	myJSchedButton = new JButton("Judging Schedule");
     	class myListener implements ActionListener {
 
 			@Override
 			public void actionPerformed(ActionEvent theEvent) {
-				
+				if (theEvent.getActionCommand() == "Judging Schedule") {
+					new JudgeSchedListScreen();
+				}
 			}
     		
     	}
     	myRegisterButton.addActionListener(new myListener());
     	myLoginButton.addActionListener(new myListener());
+    	myJSchedButton.addActionListener(new myListener());
     }
 
 }
