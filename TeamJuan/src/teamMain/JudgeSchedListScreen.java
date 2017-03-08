@@ -12,6 +12,7 @@ public class JudgeSchedListScreen {
     
     private JFrame myFrame;
     
+    //comment
 	public JudgeSchedListScreen() {
 		myFrame = new JFrame();
 		myFrame.setTitle("Login Window");
