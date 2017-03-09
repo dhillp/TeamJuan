@@ -38,7 +38,7 @@ public final class MainWindow {
     }
     
     private void createButtons() {
-    	myAboutButton = new JButton("About...");
+    	myAboutButton = new JButton("Judge Schedule");
     	myAboutButton.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
 				JOptionPane.showMessageDialog(null, "We Are Team Juan!"

@@ -26,7 +26,10 @@ public class JudgeSchedListScreen {
 	    Object[][] data = new Object[][] {
 	            {"Judge1", "Place1", "Category6", "1/1/18", "1:45 PM"}
 	    	};
+	    	
+
 	    JTable table = new JTable(data, columns);
+	    
 	    myFrame.add(new JScrollPane(table));
 		myFrame.setLocation(SCREEN_SIZE.width / 2 - myFrame.getWidth() / 2,
                 SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
