@@ -30,6 +30,7 @@ public class RegisterScreen {
 	private JFrame myFrame;
 	private Timer myTimer;
 	
+	
 	public RegisterScreen() {
 		myFrame = new JFrame();
 		myFrame.setTitle("Create Account");
@@ -37,7 +38,7 @@ public class RegisterScreen {
 		myFrame.setResizable(false);
 		createPanel();
 		createTimer();
-		myTimer.start();
+		//myTimer.start();
 		myFrame.setLocation(SCREEN_SIZE.width / 2 - myFrame.getWidth() / 2,
 				SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
 		myFrame.addWindowListener(new WindowAdapter() {
@@ -120,10 +121,11 @@ public class RegisterScreen {
 	
 	private void createButtons() {
     	mySubmit = new JButton("Submit");
-    	mySubmit.setEnabled(false);
+    	mySubmit.setEnabled(true);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
 				//REGISTER THE USER TO THE CONTEST
+    			new EventRegistration(getFirstName(), getLastName(), getEmail(), null, null);
 				myTimer.stop();
 				myFrame.dispose();
     		}
