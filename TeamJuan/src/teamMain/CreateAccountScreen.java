@@ -1,6 +1,7 @@
 package teamMain;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -9,28 +10,32 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Arrays;
 
 import javax.swing.Timer;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
-public class RegisterScreen {
+public class CreateAccountScreen {
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
 	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();
 	private JTextField myFirstName;
 	private JTextField myLastName;
 	private JTextField myEmail;
-	private JComboBox myCategoryBox;
-	private JComboBox myEventBox;
+	private JPasswordField myPassword;
+	private JPasswordField myConfirmPassword;
+	private JLabel myEmailWarning;
+	private JLabel myPasswordWarning;
 	private JButton mySubmit;
 	private JFrame myFrame;
 	private Timer myTimer;
 	
-	public RegisterScreen() {
+	public CreateAccountScreen() {
 		myFrame = new JFrame();
 		myFrame.setTitle("Create Account");
 		myFrame.setSize(650, 250);
@@ -56,13 +61,19 @@ public class RegisterScreen {
 		myFirstName = new JTextField(20);
 		myLastName = new JTextField(20);
 		myEmail = new JTextField(40);
-		myCategoryBox = new JComboBox();
-		myEventBox = new JComboBox();
+		myPassword = new JPasswordField(20);
+		myConfirmPassword = new JPasswordField(20);
 		JLabel fName = new JLabel("Enter First Name: ");
 		JLabel lName = new JLabel("Enter Last Name: ");
 		JLabel email = new JLabel("Enter Email: ");
-		JLabel category = new JLabel("Select Category: ");
-		JLabel event = new JLabel("Select Event: ");
+		JLabel pass = new JLabel("Enter Password: ");
+		JLabel cPass = new JLabel("Confirm Password: ");
+		myEmailWarning = new JLabel("");
+    	myEmailWarning.setForeground(Color.RED);
+    	myEmailWarning.setHorizontalAlignment(SwingConstants.CENTER);
+    	myPasswordWarning = new JLabel("");
+    	myPasswordWarning.setForeground(Color.RED);
+    	myPasswordWarning.setHorizontalAlignment(SwingConstants.CENTER);
     	
     	constraint.gridx = 0;
     	constraint.gridy = 0;
@@ -93,21 +104,30 @@ public class RegisterScreen {
     	
     	constraint.gridx = 0;
     	constraint.gridy = 3;
-    	constraint.gridwidth = 1;
-    	panel.add(category, constraint);
-    	constraint.gridx = 1;
-    	constraint.gridy = 3;
-    	constraint.gridwidth = 2;
-    	panel.add(myCategoryBox, constraint);
+    	constraint.gridwidth = 3;
+    	panel.add(myEmailWarning, constraint);
     	
     	constraint.gridx = 0;
     	constraint.gridy = 4;
     	constraint.gridwidth = 1;
-    	panel.add(event, constraint);
+    	panel.add(pass, constraint);
     	constraint.gridx = 1;
     	constraint.gridy = 4;
     	constraint.gridwidth = 2;
-    	panel.add(myEventBox, constraint);
+    	panel.add(myPassword, constraint);
+    	constraint.gridx = 0;
+    	constraint.gridy = 5;
+    	constraint.gridwidth = 1;
+    	panel.add(cPass, constraint);
+    	constraint.gridx = 1;
+    	constraint.gridy = 5;
+    	constraint.gridwidth = 2;
+    	panel.add(myConfirmPassword, constraint);
+    	
+    	constraint.gridx = 0;
+    	constraint.gridy = 6;
+    	constraint.gridwidth = 3;
+    	panel.add(myPasswordWarning, constraint);
     	
     	createButtons();
     	JPanel panel2 = new JPanel();
@@ -123,7 +143,7 @@ public class RegisterScreen {
     	mySubmit.setEnabled(false);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-				//REGISTER THE USER TO THE CONTEST
+				//ADD USER TO FILE
 				myTimer.stop();
 				myFrame.dispose();
     		}
@@ -134,15 +154,33 @@ public class RegisterScreen {
 		myTimer = new Timer(100, new ActionListener() {
 	        @Override
 	        public void actionPerformed(ActionEvent theEvent) {
-	        	/* if (myFirstName.getText().length() > 0
+	        	if (emailTaken()) {
+	        		myEmailWarning.setText("This Email is already registered.");
+	        	} else {
+	        		myEmailWarning.setText("");
+	        	}
+	        	if (!(Arrays.equals(myPassword.getPassword(), 
+	        			myConfirmPassword.getPassword()))) {
+	        		myPasswordWarning.setText("Passwords do not match.");
+	        	} else {
+	        		myPasswordWarning.setText("");
+	        	}
+	        	if (myPassword.getPassword().length > 20 
+	        			|| myPassword.getPassword().length < 8) {
+	        		myPasswordWarning.setText("Password must be between 8 and 20 characters.");
+	        	}
+	        	if (!(myPassword.getPassword().length < 8) 
+	        			&& myPassword.getPassword().length <= 20
+	        			&& myFirstName.getText().length() > 0
 	        			&& myLastName.getText().length() > 0
 	        			&& myFirstName.getText().length() <= 20
 	        			&& myLastName.getText().length() <= 20
-	        			&& COMBO BOXES ARE SELECTED) {
+	        			&& Arrays.equals(myPassword.getPassword(), 
+	        					myConfirmPassword.getPassword())) {
 	        		mySubmit.setEnabled(true);
 	        	} else {
 	        		mySubmit.setEnabled(false);
-	        	} */
+	        	}
 	        }
 	    });
 	}
@@ -159,4 +197,12 @@ public class RegisterScreen {
     	return myEmail.getText().trim();
     }
     
+    private String getPassword() {
+    	return new String(myPassword.getPassword());
+    }
+    
+    private boolean emailTaken() {
+    	//SEARCH FILE IF EMAIL IS ALREADY REGISTERED
+    	return false;
+    }
 }

@@ -22,9 +22,11 @@ public final class LoginScreen {
 	
     private JButton myLoginButton;
 
-    private JButton myRegisterButton;
+    private JButton myCreateButton;
     
     private JButton myJSchedButton;
+    
+    private JButton myRegister;
     
     private JTextField myUsername;
     
@@ -70,30 +72,45 @@ public final class LoginScreen {
     	createButtons();
     	JPanel panel2 = new JPanel();
     	panel2.add(myLoginButton);
-    	panel2.add(myRegisterButton);
-    	panel2.add(myJSchedButton);
+    	panel2.add(myRegister);
     	JPanel panel3 = new JPanel();
+    	panel3.add(myCreateButton);
+    	panel3.add(myJSchedButton);
     	myFrame.getContentPane().add(panel3, BorderLayout.PAGE_START);
     	myFrame.getContentPane().add(panel, BorderLayout.CENTER);
     	myFrame.getContentPane().add(panel2, BorderLayout.PAGE_END);
     }
     private void createButtons() {
     	myLoginButton = new JButton("Login");
-    	myRegisterButton = new JButton("Register");
-    	myJSchedButton = new JButton("Judging Schedule");
-    	class myListener implements ActionListener {
-
+    	myLoginButton.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent theEvent) {
-				if (theEvent.getActionCommand() == "Judging Schedule") {
-					new JudgeSchedListScreen();
-				}
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+    	});
+    	myCreateButton = new JButton("Create Account");
+    	myCreateButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new CreateAccountScreen();		
 			}
     		
-    	}
-    	myRegisterButton.addActionListener(new myListener());
-    	myLoginButton.addActionListener(new myListener());
-    	myJSchedButton.addActionListener(new myListener());
+    	});
+    	myJSchedButton = new JButton("Judging Schedule");
+    	myJSchedButton.addActionListener(new ActionListener() {
+    		@Override
+			public void actionPerformed(ActionEvent theEvent) {
+				new JudgeSchedListScreen();
+			}
+    	});
+    	myRegister = new JButton("Register");
+    	myRegister.addActionListener(new ActionListener() {
+    		@Override
+			public void actionPerformed(ActionEvent theEvent) {
+				new RegisterScreen();
+			}
+    	});
     }
 
 }
