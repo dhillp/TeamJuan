@@ -8,6 +8,7 @@ import java.awt.GridBagLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -130,7 +131,12 @@ public final class LoginScreen {
     	myJSchedButton.addActionListener(new ActionListener() {
     		@Override
 			public void actionPerformed(ActionEvent theEvent) {
-				new JudgeSchedListScreen();
+				try {
+					new JudgeSchedListScreen();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
     	});
     	myRegister = new JButton("Register");
