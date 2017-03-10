@@ -1,2 +1,0 @@
-Homie,Something,EVENT,hsome@gmail.com
-First,Last,London Marathon, Drawing, Jan 7,Email
