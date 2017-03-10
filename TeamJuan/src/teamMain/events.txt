@@ -1,9 +1,5 @@
-events, 
-New Year's Parade, 
-London Boat Show,
-Ideal Home Show,
-London Marathon,
-Boat Race,
-
-category
-Weaving, Drawing
+New Year's Parade, Weaving,  Dec 12
+London Boat Show, Weaving, Jan 3
+Ideal Home Show, Drawing, Jan 4
+London Marathon, Drawing, Jan 7
+Boat Race, Drawing, Jan 10
