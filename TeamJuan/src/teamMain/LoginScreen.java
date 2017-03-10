@@ -15,6 +15,7 @@ import javax.swing.JScrollPane;
 //import javax.swing.JPasswordField;
 //import javax.swing.JTextField;
 import javax.swing.JTable;
+import javax.swing.table.TableColumn;
 
 public final class LoginScreen {
 	

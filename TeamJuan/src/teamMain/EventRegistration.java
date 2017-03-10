@@ -10,16 +10,14 @@ public class EventRegistration {
 	private static String myLast;
 	private static String myEvent;
 	private static String myEmail;
-	private static String myCategory;
 
 	
 	public EventRegistration(String first, String last, String event
-			,String email, String category){
+			,String email){
 		myFirst = first;
 		myLast = last;
 		myEvent = event;
 		myEmail = email;
-		myCategory = category;
 		writeFile();
 	}
 	
@@ -30,7 +28,7 @@ public class EventRegistration {
                 new FileWriter(fileName, true);
             BufferedWriter bufferedWriter =
                 new BufferedWriter(fileWriter);
-            bufferedWriter.write(myEvent + "," + myFirst + "," + myLast + "," + myEmail + "," + myCategory );
+            bufferedWriter.write(myEvent + "," + myFirst + "," + myLast + "," + myEmail );
             bufferedWriter.newLine();
 			bufferedWriter.close();
         }
