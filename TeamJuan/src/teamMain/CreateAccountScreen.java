@@ -10,14 +10,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.Arrays;
 
 import javax.swing.Timer;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -27,10 +25,7 @@ public class CreateAccountScreen {
 	private JTextField myFirstName;
 	private JTextField myLastName;
 	private JTextField myEmail;
-	private JPasswordField myPassword;
-	private JPasswordField myConfirmPassword;
 	private JLabel myEmailWarning;
-	private JLabel myPasswordWarning;
 	private JButton mySubmit;
 	private JFrame myFrame;
 	private Timer myTimer;
@@ -61,19 +56,12 @@ public class CreateAccountScreen {
 		myFirstName = new JTextField(20);
 		myLastName = new JTextField(20);
 		myEmail = new JTextField(40);
-		myPassword = new JPasswordField(20);
-		myConfirmPassword = new JPasswordField(20);
 		JLabel fName = new JLabel("Enter First Name: ");
 		JLabel lName = new JLabel("Enter Last Name: ");
 		JLabel email = new JLabel("Enter Email: ");
-		JLabel pass = new JLabel("Enter Password: ");
-		JLabel cPass = new JLabel("Confirm Password: ");
 		myEmailWarning = new JLabel("");
     	myEmailWarning.setForeground(Color.RED);
     	myEmailWarning.setHorizontalAlignment(SwingConstants.CENTER);
-    	myPasswordWarning = new JLabel("");
-    	myPasswordWarning.setForeground(Color.RED);
-    	myPasswordWarning.setHorizontalAlignment(SwingConstants.CENTER);
     	
     	constraint.gridx = 0;
     	constraint.gridy = 0;
@@ -107,28 +95,6 @@ public class CreateAccountScreen {
     	constraint.gridwidth = 3;
     	panel.add(myEmailWarning, constraint);
     	
-    	constraint.gridx = 0;
-    	constraint.gridy = 4;
-    	constraint.gridwidth = 1;
-    	panel.add(pass, constraint);
-    	constraint.gridx = 1;
-    	constraint.gridy = 4;
-    	constraint.gridwidth = 2;
-    	panel.add(myPassword, constraint);
-    	constraint.gridx = 0;
-    	constraint.gridy = 5;
-    	constraint.gridwidth = 1;
-    	panel.add(cPass, constraint);
-    	constraint.gridx = 1;
-    	constraint.gridy = 5;
-    	constraint.gridwidth = 2;
-    	panel.add(myConfirmPassword, constraint);
-    	
-    	constraint.gridx = 0;
-    	constraint.gridy = 6;
-    	constraint.gridwidth = 3;
-    	panel.add(myPasswordWarning, constraint);
-    	
     	createButtons();
     	JPanel panel2 = new JPanel();
     	panel2.add(mySubmit);
@@ -159,24 +125,10 @@ public class CreateAccountScreen {
 	        	} else {
 	        		myEmailWarning.setText("");
 	        	}
-	        	if (!(Arrays.equals(myPassword.getPassword(), 
-	        			myConfirmPassword.getPassword()))) {
-	        		myPasswordWarning.setText("Passwords do not match.");
-	        	} else {
-	        		myPasswordWarning.setText("");
-	        	}
-	        	if (myPassword.getPassword().length > 20 
-	        			|| myPassword.getPassword().length < 8) {
-	        		myPasswordWarning.setText("Password must be between 8 and 20 characters.");
-	        	}
-	        	if (!(myPassword.getPassword().length < 8) 
-	        			&& myPassword.getPassword().length <= 20
-	        			&& myFirstName.getText().length() > 0
+	        	if (myFirstName.getText().length() > 0
 	        			&& myLastName.getText().length() > 0
 	        			&& myFirstName.getText().length() <= 20
-	        			&& myLastName.getText().length() <= 20
-	        			&& Arrays.equals(myPassword.getPassword(), 
-	        					myConfirmPassword.getPassword())) {
+	        			&& myLastName.getText().length() <= 20) {
 	        		mySubmit.setEnabled(true);
 	        	} else {
 	        		mySubmit.setEnabled(false);
@@ -195,10 +147,6 @@ public class CreateAccountScreen {
     
     private String getEmail() {
     	return myEmail.getText().trim();
-    }
-    
-    private String getPassword() {
-    	return new String(myPassword.getPassword());
     }
     
     private boolean emailTaken() {
