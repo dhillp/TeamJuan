@@ -12,7 +12,7 @@ public class readEvents {
 	}
 	
 	
-	private ArrayList<String> getdata(){
+	public ArrayList<String> getdata(){
 		
 		ArrayList<String> eventsList = new ArrayList<String>();
         try (BufferedReader reader = new BufferedReader(new FileReader("events.txt")))
