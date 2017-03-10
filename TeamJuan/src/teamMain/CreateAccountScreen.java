@@ -125,7 +125,8 @@ public class CreateAccountScreen {
 	        	} else {
 	        		myEmailWarning.setText("");
 	        	}
-	        	if (myFirstName.getText().length() > 0
+	        	if (!emailTaken()
+	        			&& myFirstName.getText().length() > 0
 	        			&& myLastName.getText().length() > 0
 	        			&& myFirstName.getText().length() <= 20
 	        			&& myLastName.getText().length() <= 20) {
