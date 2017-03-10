@@ -11,6 +11,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.Timer;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -59,7 +60,7 @@ public class RegisterScreen {
 		myEmail = new JTextField(40);
 		myCategoryBox = new JComboBox();
 		readEvents r = new readEvents();
-		
+		myCategoryBox.setModel(new DefaultComboBoxModel(r.getdata().toArray()));
 		JLabel fName = new JLabel("Enter First Name: ");
 		JLabel lName = new JLabel("Enter Last Name: ");
 		JLabel email = new JLabel("Enter Email: ");
@@ -115,7 +116,7 @@ public class RegisterScreen {
     	mySubmit.setEnabled(true);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-    			new EventRegistration(getFirstName(), getLastName(), getEmail(), "EVENT");
+    			new EventRegistration(getFirstName(), getLastName(), getEvent(), getEmail());
 				myTimer.stop();
 				myFrame.dispose();
     		}
