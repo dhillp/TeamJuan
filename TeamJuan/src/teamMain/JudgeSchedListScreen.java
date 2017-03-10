@@ -21,7 +21,6 @@ public class JudgeSchedListScreen {
     
     private JFrame myFrame;
     
-    private String file = "judge.txt";
     
     //comment
 	public JudgeSchedListScreen() throws IOException {
@@ -31,22 +30,11 @@ public class JudgeSchedListScreen {
 		myFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		myFrame.setSize(500, 500);
 		
-		ArrayList<String> test = OpenFile();
+		readJudge r = new readJudge();
 		
-		String[] columns = new String[] {
-				"First Name", "Last Name", "Time", "Date", "Category"
-		}; 
-		DefaultTableModel model = new DefaultTableModel(columns, 0);
-		
-		for(int i = 2; i < test.size(); i++) {
-			String temp = test.get(i);
-			
-			String[] temp2 = temp.split(",");
-			
-			model.addRow(new Object[] {temp2[0], temp2[1], temp2[2], temp2[3], temp2[4]});
-		}
-	    
+		DefaultTableModel model = r.getModel();
 	    JTable table = new JTable();
+
 	    table.setModel(model);
 
 	    
@@ -56,18 +44,5 @@ public class JudgeSchedListScreen {
 		myFrame.setVisible(true);
     }
 	
-	public ArrayList<String> OpenFile() throws IOException {
-		ArrayList<String> input = new ArrayList<>();
-		String data;
-		Scanner inFile = new Scanner(new File("judge.txt"));
-		int i = 0;
-		while(inFile.hasNextLine())
-		{
-		   data = inFile.nextLine();
-		   input.add(i, data);
-		   i++;
-		   
-		}
-		return input;
-	}
+	
 }
