@@ -29,7 +29,7 @@ public final class LoginScreen {
 	
     private JButton myLoginButton;
 
-//    private JButton myUpcomingButton;
+    private JButton myUpcomingButton;
     
     private JButton myJSchedButton;
     
@@ -39,7 +39,7 @@ public final class LoginScreen {
     
 //    private JTable myTable;
     
-    private JTextField myUsername;
+    private JTextField myEmail;
     
     private JPasswordField myPassword;
     
@@ -61,7 +61,7 @@ public final class LoginScreen {
     	JPanel panel3 = new JPanel();
     	GridBagConstraints c = new GridBagConstraints();
     	c.fill = GridBagConstraints.HORIZONTAL;
-    	myUsername = new JTextField(20);
+    	myEmail = new JTextField(20);
     	myPassword = new JPasswordField(20);
     	JLabel user = new JLabel("Username: ");
     	JLabel pass = new JLabel("Password: ");
@@ -72,7 +72,7 @@ public final class LoginScreen {
     	c.gridx = 1;
     	c.gridy = 0;
     	c.gridwidth = 2;
-    	panel2.add(myUsername, c);
+    	panel2.add(myEmail, c);
     	c.gridx = 0;
     	c.gridy = 1;
     	c.gridwidth = 1;
@@ -87,7 +87,7 @@ public final class LoginScreen {
 //    	panel3.add(myCreateAccount);
     	panel3.add(myRegister);
 //    	JPanel panel3 = new JPanel();
-//    	panel.add(myUpcomingButton);
+    	panel.add(myUpcomingButton);
     	panel.add(myJSchedButton);
     	JLabel upcomingEvents = new JLabel("Upcoming Events: ");
     	myFrame.getContentPane().add(upcomingEvents, BorderLayout.PAGE_START);
@@ -120,13 +120,14 @@ public final class LoginScreen {
     			new CreateAccountScreen();
     		}
     	});
-//    	myUpcomingButton = new JButton("Upcoming Events");
-//    	myUpcomingButton.addActionListener(new ActionListener() {
-//			@Override
-//			public void actionPerformed(ActionEvent e) {	
-//			}
-//    		
-//    	});
+    	myUpcomingButton = new JButton("Upcoming Events");
+    	myUpcomingButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new UpcomingEventScreen();
+			}
+    		
+    	});
     	myJSchedButton = new JButton("Judging Schedule");
     	myJSchedButton.addActionListener(new ActionListener() {
     		@Override
