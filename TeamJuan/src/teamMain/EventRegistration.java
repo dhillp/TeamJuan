@@ -28,7 +28,7 @@ public class EventRegistration {
                 new FileWriter(fileName, true);
             BufferedWriter bufferedWriter =
                 new BufferedWriter(fileWriter);
-            bufferedWriter.write(myEvent + "," + myFirst + "," + myLast + "," + myEmail );
+            bufferedWriter.write(myFirst + "," + myLast + "," + myEmail + "," + myEvent);
             bufferedWriter.newLine();
 			bufferedWriter.close();
         }
