@@ -6,11 +6,11 @@ import java.io.IOException;
 
 public class EventRegistration {
 	
-	private String myFirst;
-	private String myLast;
-	private String myEvent;
-	private String myEmail;
-	private String myCategory;
+	private static String myFirst;
+	private static String myLast;
+	private static String myEvent;
+	private static String myEmail;
+	private static String myCategory;
 
 	
 	public EventRegistration(String first, String last, String event
@@ -23,15 +23,14 @@ public class EventRegistration {
 		writeFile();
 	}
 	
-	private void writeFile(){
-		String st = toString();
+	public static void writeFile(){
         String fileName = "Data.txt";
         try {
             FileWriter fileWriter =
-                new FileWriter(fileName);
+                new FileWriter(fileName, true);
             BufferedWriter bufferedWriter =
                 new BufferedWriter(fileWriter);
-            bufferedWriter.write(toString());
+            bufferedWriter.write(myEvent + "," + myFirst + "," + myLast + "," + myEmail + "," + myCategory );
             bufferedWriter.newLine();
 			bufferedWriter.close();
         }
@@ -42,11 +41,9 @@ public class EventRegistration {
         }
     }
 
-	public String toString(){
-		String myString;
-		myString = myEvent + "," + myFirst + "," + myLast + "," + myEmail + "," + myCategory;
-		return myString;
-	}
+
+
+	
 	
 	
 	

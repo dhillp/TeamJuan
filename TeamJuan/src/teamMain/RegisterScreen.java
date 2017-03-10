@@ -124,8 +124,8 @@ public class RegisterScreen {
     	mySubmit.setEnabled(true);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-				//REGISTER THE USER TO THE CONTEST
-    			new EventRegistration(getFirstName(), getLastName(), getEmail(), null, null);
+    			new EventRegistration(getFirstName(), getLastName(), getEmail(), "helo", "hello");
+    			System.out.println("hello");
 				myTimer.stop();
 				myFrame.dispose();
     		}
