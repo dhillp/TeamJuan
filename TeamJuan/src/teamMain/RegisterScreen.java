@@ -18,6 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
 public class RegisterScreen {
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
 	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();
