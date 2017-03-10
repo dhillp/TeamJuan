@@ -7,7 +7,7 @@ public class ProjectMain {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 //				new LoginScreen();
-				new MainWindow();
+				new LoginScreen();
 			}
 		});
 	}
