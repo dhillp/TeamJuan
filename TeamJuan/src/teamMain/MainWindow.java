@@ -27,7 +27,7 @@ public final class MainWindow {
 	
 	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();
 	
-    private JButton myLoginButton;
+//    private JButton myLoginButton;
 
     private JButton myUpcomingButton;
     
@@ -35,13 +35,13 @@ public final class MainWindow {
     
     private JButton myRegister;
     
-    private JButton myCreateAccount;
+//    private JButton myCreateAccount;
     
 //    private JTable myTable;
     
-    private JTextField myEmail;
+//    private JTextField myEmail;
     
-    private JPasswordField myPassword;
+//    private JPasswordField myPassword;
     
     private JFrame myFrame;
     
@@ -57,35 +57,35 @@ public final class MainWindow {
     }
     
     private void createPanel() {
-    	JPanel panel2 = new JPanel(new GridBagLayout());
-    	JPanel panel3 = new JPanel();
-    	GridBagConstraints c = new GridBagConstraints();
-    	c.fill = GridBagConstraints.HORIZONTAL;
-    	myEmail = new JTextField(20);
-    	myPassword = new JPasswordField(20);
-    	JLabel user = new JLabel("Username: ");
-    	JLabel pass = new JLabel("Password: ");
-    	c.gridx = 0;
-    	c.gridy = 0;
-    	c.gridwidth = 1;
-    	panel2.add(user, c);
-    	c.gridx = 1;
-    	c.gridy = 0;
-    	c.gridwidth = 2;
-    	panel2.add(myEmail, c);
-    	c.gridx = 0;
-    	c.gridy = 1;
-    	c.gridwidth = 1;
-    	panel2.add(pass, c);
-    	c.gridx = 1;
-    	c.gridy = 1;
-    	c.gridwidth = 2;
-    	panel2.add(myPassword, c);
+//    	JPanel panel2 = new JPanel(new GridBagLayout());
+//    	JPanel panel3 = new JPanel();
+//    	GridBagConstraints c = new GridBagConstraints();
+//    	c.fill = GridBagConstraints.HORIZONTAL;
+//    	myEmail = new JTextField(20);
+//    	myPassword = new JPasswordField(20);
+//    	JLabel user = new JLabel("Username: ");
+//    	JLabel pass = new JLabel("Password: ");
+//    	c.gridx = 0;
+//    	c.gridy = 0;
+//    	c.gridwidth = 1;
+//    	panel2.add(user, c);
+//    	c.gridx = 1;
+//    	c.gridy = 0;
+//    	c.gridwidth = 2;
+//    	panel2.add(myEmail, c);
+//    	c.gridx = 0;
+//    	c.gridy = 1;
+//    	c.gridwidth = 1;
+//    	panel2.add(pass, c);
+//    	c.gridx = 1;
+//    	c.gridy = 1;
+//    	c.gridwidth = 2;
+//    	panel2.add(myPassword, c);
     	createButtons();
     	JPanel panel = new JPanel();
-    	panel3.add(myLoginButton);
+//    	panel3.add(myLoginButton);
 //    	panel3.add(myCreateAccount);
-    	panel3.add(myRegister);
+    	panel.add(myRegister);
 //    	JPanel panel3 = new JPanel();
     	panel.add(myUpcomingButton);
     	panel.add(myJSchedButton);
@@ -101,25 +101,25 @@ public final class MainWindow {
 //    	myFrame.getContentPane().add(p2, BorderLayout.CENTER);
 //    	myFrame.getContentPane().add(new JScrollPane(myTable), BorderLayout.CENTER);
     	myFrame.getContentPane().add(panel, BorderLayout.PAGE_START);
-    	myFrame.getContentPane().add(panel2, BorderLayout.CENTER);
-    	myFrame.getContentPane().add(panel3, BorderLayout.PAGE_END);
+//    	myFrame.getContentPane().add(panel2, BorderLayout.CENTER);
+//    	myFrame.getContentPane().add(panel3, BorderLayout.PAGE_END);
     }
     private void createButtons() {
-    	myLoginButton = new JButton("Login");
-    	myLoginButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-    	});
-    	myCreateAccount = new JButton("Create Account");
-    	myCreateAccount.addActionListener( new ActionListener() {
-    		@Override
-    		public void actionPerformed(ActionEvent e) {
-    			new CreateAccountScreen();
-    		}
-    	});
+//    	myLoginButton = new JButton("Login");
+//    	myLoginButton.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				// TODO Auto-generated method stub
+//				
+//			}
+//    	});
+//    	myCreateAccount = new JButton("Create Account");
+//    	myCreateAccount.addActionListener( new ActionListener() {
+//    		@Override
+//    		public void actionPerformed(ActionEvent e) {
+//    			new CreateAccountScreen();
+//    		}
+//    	});
     	myUpcomingButton = new JButton("Upcoming Events");
     	myUpcomingButton.addActionListener(new ActionListener() {
 			@Override
