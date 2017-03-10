@@ -26,7 +26,6 @@ public class RegisterScreen {
 	private JTextField myLastName;
 	private JTextField myEmail;
 	private JComboBox myCategoryBox;
-	private JComboBox myEventBox;
 	private JButton mySubmit;
 	private JFrame myFrame;
 	private Timer myTimer;
@@ -59,12 +58,10 @@ public class RegisterScreen {
 		myLastName = new JTextField(20);
 		myEmail = new JTextField(40);
 		myCategoryBox = new JComboBox();
-		myEventBox = new JComboBox();
 		JLabel fName = new JLabel("Enter First Name: ");
 		JLabel lName = new JLabel("Enter Last Name: ");
 		JLabel email = new JLabel("Enter Email: ");
-		JLabel category = new JLabel("Select Category: ");
-		JLabel event = new JLabel("Select Event: ");
+		JLabel category = new JLabel("Select Event/Category: ");
     	
     	constraint.gridx = 0;
     	constraint.gridy = 0;
@@ -102,15 +99,6 @@ public class RegisterScreen {
     	constraint.gridwidth = 2;
     	panel.add(myCategoryBox, constraint);
     	
-    	constraint.gridx = 0;
-    	constraint.gridy = 4;
-    	constraint.gridwidth = 1;
-    	panel.add(event, constraint);
-    	constraint.gridx = 1;
-    	constraint.gridy = 4;
-    	constraint.gridwidth = 2;
-    	panel.add(myEventBox, constraint);
-    	
     	createButtons();
     	JPanel panel2 = new JPanel();
     	panel2.add(mySubmit);
@@ -125,13 +113,14 @@ public class RegisterScreen {
     	mySubmit.setEnabled(true);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-    			new EventRegistration(getFirstName(), getLastName(), getEmail(), "helo");
+    			new EventRegistration(getFirstName(), getLastName(), getEmail(), getEvent());
     			System.out.println("hello");
 				myTimer.stop();
 				myFrame.dispose();
     		}
     	});
     }
+
 	
 	private void createTimer() {
 		myTimer = new Timer(100, new ActionListener() {
@@ -162,4 +151,7 @@ public class RegisterScreen {
     	return myEmail.getText().trim();
     }
     
+    private String getEvent() {
+    	return myCategoryBox.getSelectedItem().toString();
+    }
 }

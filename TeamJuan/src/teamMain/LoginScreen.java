@@ -6,6 +6,9 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -84,6 +87,8 @@ public final class LoginScreen {
     	JLabel upcomingEvents = new JLabel("Upcoming Events: ");
     	myFrame.getContentPane().add(upcomingEvents, BorderLayout.PAGE_START);
     	JTable myTable = new JTable();
+
+    	
     	myFrame.getContentPane().add(new JScrollPane(myTable), BorderLayout.CENTER);
 //    	myFrame.getContentPane().add(panel3, BorderLayout.PAGE_START);
 //    	myFrame.getContentPane().add(panel, BorderLayout.CENTER);
