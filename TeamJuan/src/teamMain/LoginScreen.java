@@ -9,7 +9,9 @@ import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,6 +20,8 @@ import javax.swing.JScrollPane;
 //import javax.swing.JPasswordField;
 //import javax.swing.JTextField;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
 public final class LoginScreen {
@@ -87,8 +91,13 @@ public final class LoginScreen {
     	JLabel upcomingEvents = new JLabel("Upcoming Events: ");
     	myFrame.getContentPane().add(upcomingEvents, BorderLayout.PAGE_START);
     	JTable myTable = new JTable();
-
-    	
+    	JPanel p2 = new JPanel();
+//    	readEvents r = new readEvents();
+//		ArrayList<String> al = r.getdata();
+//		for (int i = 0; i < al.size(); i++) {
+//			p2.add(new JLabel(al.get(i) + "\n"));
+//		}
+//    	myFrame.getContentPane().add(p2, BorderLayout.CENTER);
     	myFrame.getContentPane().add(new JScrollPane(myTable), BorderLayout.CENTER);
 //    	myFrame.getContentPane().add(panel3, BorderLayout.PAGE_START);
 //    	myFrame.getContentPane().add(panel, BorderLayout.CENTER);
