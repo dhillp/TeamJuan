@@ -42,7 +42,6 @@ public class JudgeSchedListScreen {
 			String temp = test.get(i);
 			
 			String[] temp2 = temp.split(",");
-			System.out.println(Arrays.toString(temp2));
 			
 			model.addRow(new Object[] {temp2[0], temp2[1], temp2[2], temp2[3], temp2[4]});
 		}
