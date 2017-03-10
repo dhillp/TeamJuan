@@ -113,8 +113,7 @@ public class RegisterScreen {
     	mySubmit.setEnabled(true);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-    			new EventRegistration(getFirstName(), getLastName(), getEmail(), getEvent());
-    			System.out.println("hello");
+    			new EventRegistration(getFirstName(), getLastName(), getEmail(), "");
 				myTimer.stop();
 				myFrame.dispose();
     		}
