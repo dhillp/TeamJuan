@@ -58,6 +58,8 @@ public class RegisterScreen {
 		myLastName = new JTextField(20);
 		myEmail = new JTextField(40);
 		myCategoryBox = new JComboBox();
+		readEvents r = new readEvents();
+		
 		JLabel fName = new JLabel("Enter First Name: ");
 		JLabel lName = new JLabel("Enter Last Name: ");
 		JLabel email = new JLabel("Enter Email: ");
