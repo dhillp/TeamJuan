@@ -15,6 +15,7 @@ public class ProjectMain {
 	 * 		and event as inputs and then looks up the corresponding info for
 	 * 		the user in the system registration data file and then stores that
 	 * 		in the data file
+	 * 4.	Set up the GUI to work with the back-end.
 	 */
 	
 	public static void main(String[] theArgs) {
