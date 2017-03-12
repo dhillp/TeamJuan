@@ -29,6 +29,7 @@ public final class LoginScreen {
 	private ArrayList<Person> myCandidates;
 
 	public LoginScreen() {
+		readUserInfo();
 		myFrame = new JFrame();
 		myFrame.setTitle("Login Window");
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,8 +62,7 @@ public final class LoginScreen {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String email = myEmail.getText();
-				readUserInfo();
-				if (email !=  null && email != "") {
+				if (!email.equals("")) {
 					for (int i = 0; i < myCandidates.size(); i++) {
 						if (email.equals(myCandidates.get(i).email)) {
 							new MainWindow(myCandidates.get(i));
@@ -80,7 +80,8 @@ public final class LoginScreen {
 		myCreateAccount.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new CreateAccountScreen();
+				new CreateAccountScreen(myCandidates);
+				
 			}
 		});
 		panel2.add(myCreateAccount);

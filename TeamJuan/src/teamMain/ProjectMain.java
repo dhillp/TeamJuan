@@ -23,7 +23,7 @@ public class ProjectMain {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 //				new MainWindow();
-				new LoginScreen().readUserInfo();;
+				new LoginScreen();
 			}
 		});
 	}

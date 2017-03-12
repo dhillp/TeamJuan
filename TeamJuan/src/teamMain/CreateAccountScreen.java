@@ -37,8 +37,11 @@ public class CreateAccountScreen {
 	private JButton mySubmit;
 	private JFrame myFrame;
 	private Timer myTimer;
+	private ArrayList<Person> myCandidates;
+//	private static Person p;
 	
-	public CreateAccountScreen() {
+	public CreateAccountScreen(ArrayList<Person> myCandidates) {
+		this.myCandidates = myCandidates;
 		myFrame = new JFrame();
 		myFrame.setTitle("Create Account");
 		myFrame.setSize(650, 250);
@@ -117,6 +120,7 @@ public class CreateAccountScreen {
     	mySubmit.setEnabled(false);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
+    			myCandidates.add(new Person(getFirstName(), getLastName(), getEmail()));
     			System.out.println("ok");
     			System.out.println(getFirstName());
     			System.out.println(getLastName());
@@ -188,8 +192,6 @@ public class CreateAccountScreen {
 	private static String myFirst;
 	private static String myLast;
 	private static String myEmail2;
-
-	
 	
 	public static void writeFile(){
         String fileName = "sysReg.txt";
