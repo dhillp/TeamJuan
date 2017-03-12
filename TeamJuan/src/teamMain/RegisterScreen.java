@@ -61,28 +61,28 @@ public class RegisterScreen {
 		myCategoryBox = new JComboBox();
 		readEvents r = new readEvents();
 		myCategoryBox.setModel(new DefaultComboBoxModel(r.getdata().toArray()));
-		JLabel fName = new JLabel("Enter First Name: ");
-		JLabel lName = new JLabel("Enter Last Name: ");
+		//JLabel fName = new JLabel("Enter First Name: ");
+	//	JLabel lName = new JLabel("Enter Last Name: ");
 		JLabel email = new JLabel("Enter Email: ");
 		JLabel category = new JLabel("Select Event/Category: ");
     	
     	constraint.gridx = 0;
     	constraint.gridy = 0;
     	constraint.gridwidth = 1;
-    	panel.add(fName, constraint);
+    	//panel.add(fName, constraint);
     	constraint.gridx = 1;
     	constraint.gridy = 0;
     	constraint.gridwidth = 2;
-    	panel.add(myFirstName, constraint);
+    	//panel.add(myFirstName, constraint);
     	
     	constraint.gridx = 0;
     	constraint.gridy = 1;
     	constraint.gridwidth = 1;
-    	panel.add(lName, constraint);
+    //	panel.add(lName, constraint);
     	constraint.gridx = 1;
     	constraint.gridy = 1;
     	constraint.gridwidth = 2;
-    	panel.add(myLastName, constraint);
+    	//panel.add(myLastName, constraint);
     	
     	constraint.gridx = 0;
     	constraint.gridy = 2;
@@ -116,7 +116,7 @@ public class RegisterScreen {
     	mySubmit.setEnabled(true);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-    			new EventRegistration(getFirstName(), getLastName(), getEvent(), getEmail());
+    			new EventRegistration(getEvent(), getEmail());
 				myTimer.stop();
 				myFrame.dispose();
     		}

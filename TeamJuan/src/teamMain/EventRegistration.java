@@ -6,16 +6,16 @@ import java.io.IOException;
 
 public class EventRegistration {
 	
-	private static String myFirst;
-	private static String myLast;
+//	private static String myFirst;
+//	private static String myLast;
 	private static String myEvent;
 	private static String myEmail;
 
 	
-	public EventRegistration(String first, String last, String event
+	public EventRegistration( String event
 			,String email){
-		myFirst = first;
-		myLast = last;
+//		myFirst = first;
+//		myLast = last;
 		myEvent = event;
 		myEmail = email;
 		writeFile();
@@ -28,7 +28,7 @@ public class EventRegistration {
                 new FileWriter(fileName, true);
             BufferedWriter bufferedWriter =
                 new BufferedWriter(fileWriter);
-            bufferedWriter.write(myFirst + "," + myLast + "," + myEmail + "," + myEvent);
+            bufferedWriter.write(myEmail + "," + myEvent);
             bufferedWriter.newLine();
 			bufferedWriter.close();
         }

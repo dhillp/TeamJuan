@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class ReadFile {
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		fileToArray(new File("judge.txt"));
+		fileToArray(new File("Data2.txt"));
 	}
 
 	public static ArrayList<String> fileToArray(File file) throws FileNotFoundException {
