@@ -46,7 +46,7 @@ public final class LoginScreen {
     	c.gridwidth = 1;
     	panel.add(email, c);
     	c.gridx = 1;
-    	c.gridy = 0;
+    	c.gridy = 0; 
     	c.gridwidth = 2;
     	panel.add(myEmail, c);
     	JPanel panel2 = new JPanel();
