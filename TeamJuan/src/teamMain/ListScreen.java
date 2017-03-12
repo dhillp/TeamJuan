@@ -13,7 +13,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class JudgeSchedListScreen {
+public class ListScreen {
 	
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
 	
@@ -23,21 +23,20 @@ public class JudgeSchedListScreen {
     
     
     //comment
-	public JudgeSchedListScreen() throws IOException {
+	public ListScreen(File file, String name) throws IOException {
 		
 		myFrame = new JFrame();
-		myFrame.setTitle("Judging Schedule");
+		myFrame.setTitle(name);
 		myFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		myFrame.setSize(500, 500);
 		
-		readJudge r = new readJudge();
+		DisplayFile r = new DisplayFile();
 		
-		DefaultTableModel model = r.getModel();
+		DefaultTableModel model = r.getModel(file);
 	    JTable table = new JTable();
 
 	    table.setModel(model);
 
-	    
 	    myFrame.add(new JScrollPane(table));
 		myFrame.setLocation(SCREEN_SIZE.width / 2 - myFrame.getWidth() / 2,
                 SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);

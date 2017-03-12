@@ -1,0 +1,9 @@
+kevin,nguyen,Kevin@yahoo.com
+,London Weaving Show, November 20
+,New Year's Weaving,  November 11
+joe,New Year's Weaving,  November 11
+,New Year's Weaving,  November 11
+sup,London Weaving Show, November 20
+FIRST,LAST,London Weaving Show, November 20,EMAIL
+kevin,nguyen,Weaving Race,  November 22,Kevin@yahoo.com
+hello,lastname,Ideal Weaving Show, November 4,hello@gmail.com

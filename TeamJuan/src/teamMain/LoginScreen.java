@@ -19,101 +19,91 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public final class LoginScreen {
-	
+
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();	
 	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();	
-    private JFrame myFrame;
-    private JButton myLoginButton;
-    private JButton myCreateAccount;
-    private JTextField myEmail;
-    
-    public LoginScreen() {
-    	myFrame = new JFrame();
+	private JFrame myFrame;
+	private JButton myLoginButton;
+	private JButton myCreateAccount;
+	private JTextField myEmail;
+	private ArrayList<Person> myCandidates;
+
+	public LoginScreen() {
+		myFrame = new JFrame();
 		myFrame.setTitle("Login Window");
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		createPanels();
-    	myFrame.pack();
+		myFrame.pack();
 		myFrame.setResizable(false);
 		myFrame.setLocation(SCREEN_SIZE.width / 2 - myFrame.getWidth() / 2,
-                SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
+				SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
 		myFrame.setVisible(true);
-    }
-    
-    private void createPanels() {
-    	myEmail = new JTextField(30);
+	}
+
+	private void createPanels() {
+		myEmail = new JTextField(30);
 		JLabel email = new JLabel("Enter Email: ");
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
-    	c.fill = GridBagConstraints.HORIZONTAL;
-    	c.gridx = 0;
-    	c.gridy = 0;
-    	c.gridwidth = 1;
-    	panel.add(email, c);
-    	c.gridx = 1;
-    	c.gridy = 0; 
-    	c.gridwidth = 2;
-    	panel.add(myEmail, c);
-    	JPanel panel2 = new JPanel();
-    	myLoginButton = new JButton("Login");
-    	myLoginButton.addActionListener(new ActionListener() {
-    		@Override
-    		public void actionPerformed(ActionEvent e) {
-    			try {
-					if(ReadFile(myEmail.getText().toString())){
-						new MainWindow();
-						myFrame.dispose();
-					}else{
-						JOptionPane.showMessageDialog(myFrame, "Email not registered");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 0;
+		c.gridy = 0;
+		c.gridwidth = 1;
+		panel.add(email, c);
+		c.gridx = 1;
+		c.gridy = 0; 
+		c.gridwidth = 2;
+		panel.add(myEmail, c);
+		JPanel panel2 = new JPanel();
+		myLoginButton = new JButton("Login");
+		
+		myLoginButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String email = myEmail.getText();
+				if (email !=  null && email != "") {
+					for (int i = 0; i < myCandidates.size(); i++) {
+						if (email.equals(myCandidates.get(i).email)) {
+							new MainWindow(myCandidates.get(i));
+							myFrame.dispose();
+							return;
+						} 
 					}
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-    			//IF EMAIL IN TEXT FILE THEN SIGN IN AND OPEN NEW
-    			//MAIN WINDOW, THEN DISPOSE THIS WINDOW
-    		}
+					JOptionPane.showMessageDialog(myFrame, "Email not registered or it was entered incorrectly.");
+				} 
 
-			private boolean ReadFile(String string) throws FileNotFoundException {
-				Scanner input = new Scanner(new File("Data2.txt"));
-				
-				String[] temp = new String[30];
-				ArrayList<String> list = new ArrayList<String>();
-			
-				while(input.hasNextLine()) {			
-					temp = input.nextLine().trim().split(",");
-					for (int i = 0; i < temp.length; i++) {
-						list.add(temp[i]);
-					}
-				}
-				
-				boolean isitthere = false;
-				for(int k = 2; k<list.size();k=k+2){
-					if(string.equals(list.get(k).toString())){
-				
-						isitthere = true;
-					}
-				}
-				if(isitthere){
-					isitthere = false;
-					return true;
-				}
-
-			
-				input.close();
-				
-				return false;
 			}
-    	});
-    	panel2.add(myLoginButton);
-    	myCreateAccount = new JButton("Create Account");
-    	myCreateAccount.addActionListener( new ActionListener() {
-    		@Override
-    		public void actionPerformed(ActionEvent e) {
-    			new CreateAccountScreen();
-    		}
-    	});
-    	panel2.add(myCreateAccount);
-    	myFrame.getContentPane().add(panel, BorderLayout.CENTER);
-    	myFrame.getContentPane().add(panel2, BorderLayout.PAGE_END);
-    }
+		});
+		panel2.add(myLoginButton);
+		myCreateAccount = new JButton("Create Account");
+		myCreateAccount.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new CreateAccountScreen();
+			}
+		});
+		panel2.add(myCreateAccount);
+		myFrame.getContentPane().add(panel, BorderLayout.CENTER);
+		myFrame.getContentPane().add(panel2, BorderLayout.PAGE_END);
+	}
+
+	/**
+	 * Cynthia --
+	 * Read's user data and separates the information into a Person object. 
+	 * A list stores each candidate's info in a person object. 
+	 * This is to make the code more modular and also decouples the code. 
+	 */
+	public void readUserInfo() {
+		myCandidates = new ArrayList<Person>();
+		try {
+			ArrayList<String> usrData = new ReadFile().fileToArray(new File("sysReg.txt"));
+			for (int i = 0; i < usrData.size(); i += 3) {
+				Person p = new Person(usrData.get(i), usrData.get(i+1), usrData.get(i+2));
+				myCandidates.add(p);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

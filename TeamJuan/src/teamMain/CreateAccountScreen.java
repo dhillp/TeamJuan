@@ -192,7 +192,7 @@ public class CreateAccountScreen {
 	
 	
 	public static void writeFile(){
-        String fileName = "Data2.txt";
+        String fileName = "sysReg.txt";
         try {
             FileWriter fileWriter =
                 new FileWriter(fileName, true);

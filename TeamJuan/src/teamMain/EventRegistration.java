@@ -22,7 +22,7 @@ public class EventRegistration {
 	}
 	
 	public static void writeFile() {
-        String fileName = "Data.txt";
+        String fileName = "eventReg.txt";
         try {
             FileWriter fileWriter =
                 new FileWriter(fileName, true);

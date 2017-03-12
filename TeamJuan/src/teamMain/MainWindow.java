@@ -1,25 +1,18 @@
 package teamMain;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 //import java.awt.GridBagConstraints;
 //import java.awt.GridBagLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-//import javax.swing.JScrollPane;
-//import javax.swing.JPasswordField;
-//import javax.swing.JTextField;
-//import javax.swing.JTable;
-import javax.swing.JTextField;
 
 public final class MainWindow {
 	
@@ -44,8 +37,10 @@ public final class MainWindow {
 //    private JPasswordField myPassword;
     
     private JFrame myFrame;
+    private Person p;
     
-    public MainWindow() {
+    public MainWindow(Person p) {
+    	this.p = p;
 		myFrame = new JFrame();
 		myFrame.setTitle("JustBeWeave");
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -123,8 +118,13 @@ public final class MainWindow {
     	myUpcomingButton = new JButton("Upcoming Events");
     	myUpcomingButton.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				new UpcomingEventScreen();
+			public void actionPerformed(ActionEvent x) {
+				try {
+					new ListScreen(new File("events.txt"), "Upcoming Events");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
     		
     	});
@@ -133,7 +133,7 @@ public final class MainWindow {
     		@Override
 			public void actionPerformed(ActionEvent theEvent) {
 				try {
-					new JudgeSchedListScreen();
+					new ListScreen(new File("judge.txt"), "Judging Schedule");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -144,7 +144,7 @@ public final class MainWindow {
     	myRegister.addActionListener(new ActionListener() {
     		@Override
 			public void actionPerformed(ActionEvent theEvent) {
-				new RegisterScreen();
+				new RegisterScreen(p);
 			}
     	});
     }

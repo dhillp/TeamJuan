@@ -30,9 +30,11 @@ public class RegisterScreen {
 	private JButton mySubmit;
 	private JFrame myFrame;
 	private Timer myTimer;
+	private Person p;
 	
 	
-	public RegisterScreen() {
+	public RegisterScreen(Person p) {
+		this.p = p;
 		myFrame = new JFrame();
 		myFrame.setTitle("Register for Event");
 		myFrame.setSize(650, 250);
@@ -86,7 +88,7 @@ public class RegisterScreen {
     	mySubmit.setEnabled(true);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-    			new EventRegistration("FIRST", "LAST", "EMAIL", getEvent());
+    			new EventRegistration(p.firstName, p.lastName, p.email, getEvent());
 				myTimer.stop();
 				myFrame.dispose();
     		}
