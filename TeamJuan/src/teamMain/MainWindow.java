@@ -47,7 +47,7 @@ public final class MainWindow {
     
     public MainWindow() {
 		myFrame = new JFrame();
-		myFrame.setTitle("Login Window");
+		myFrame.setTitle("JustBeWeave");
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		createPanel();
 		myFrame.pack();
