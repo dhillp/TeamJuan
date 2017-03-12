@@ -3,3 +3,4 @@ kevin,nguyen,Kevin@yahoo.com
 ,New Year's Weaving,  November 11
 joe,New Year's Weaving,  November 11
 ,New Year's Weaving,  November 11
+sup,London Weaving Show, November 20

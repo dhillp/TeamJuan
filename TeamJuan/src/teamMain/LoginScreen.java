@@ -82,26 +82,21 @@ public final class LoginScreen {
 					temp = input.nextLine().trim().split(",");
 					for (int i = 0; i < temp.length; i++) {
 						list.add(temp[i]);
-						//System.out.print(temp[2]);
 					}
 				}
 				
 				boolean isitthere = false;
-				System.out.println(string.toString());
 				for(int k = 2; k<list.size();k=k+2){
-					System.out.println(list.get(k));
 					if(string.equals(list.get(k).toString())){
-						System.out.println("true");
+				
 						isitthere = true;
 					}
 				}
-				System.out.println(isitthere);
 				if(isitthere){
 					isitthere = false;
 					return true;
 				}
-				
-				System.out.println(list.toString());
+
 			
 				input.close();
 				
