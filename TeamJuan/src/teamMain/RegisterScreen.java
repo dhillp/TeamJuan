@@ -23,9 +23,9 @@ import javax.swing.JTextField;
 public class RegisterScreen {
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
 	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();
-	private JTextField myFirstName;
-	private JTextField myLastName;
-	private JTextField myEmail;
+	private String myFirstName;
+	private String myLastName;
+	private String myEmail;
 	private JComboBox myCategoryBox;
 	private JButton mySubmit;
 	private JFrame myFrame;
@@ -34,7 +34,7 @@ public class RegisterScreen {
 	
 	public RegisterScreen() {
 		myFrame = new JFrame();
-		myFrame.setTitle("Create Account");
+		myFrame.setTitle("Register for Event");
 		myFrame.setSize(650, 250);
 		myFrame.setResizable(false);
 		createPanel();
@@ -55,50 +55,20 @@ public class RegisterScreen {
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints constraint = new GridBagConstraints();
 		constraint.fill = GridBagConstraints.HORIZONTAL;
-		myFirstName = new JTextField(20);
-		myLastName = new JTextField(20);
-		myEmail = new JTextField(40);
 		myCategoryBox = new JComboBox();
 		readEvents r = new readEvents();
 		myCategoryBox.setModel(new DefaultComboBoxModel(r.getdata().toArray()));
 		//JLabel fName = new JLabel("Enter First Name: ");
-	//	JLabel lName = new JLabel("Enter Last Name: ");
-		JLabel email = new JLabel("Enter Email: ");
+		//JLabel lName = new JLabel("Enter Last Name: ");
+		//JLabel email = new JLabel("Enter Email: ");
 		JLabel category = new JLabel("Select Event/Category: ");
     	
     	constraint.gridx = 0;
     	constraint.gridy = 0;
     	constraint.gridwidth = 1;
-    	//panel.add(fName, constraint);
-    	constraint.gridx = 1;
-    	constraint.gridy = 0;
-    	constraint.gridwidth = 2;
-    	//panel.add(myFirstName, constraint);
-    	
-    	constraint.gridx = 0;
-    	constraint.gridy = 1;
-    	constraint.gridwidth = 1;
-    //	panel.add(lName, constraint);
-    	constraint.gridx = 1;
-    	constraint.gridy = 1;
-    	constraint.gridwidth = 2;
-    	//panel.add(myLastName, constraint);
-    	
-    	constraint.gridx = 0;
-    	constraint.gridy = 2;
-    	constraint.gridwidth = 1;
-    	panel.add(email, constraint);
-    	constraint.gridx = 1;
-    	constraint.gridy = 2;
-    	constraint.gridwidth = 2;
-    	panel.add(myEmail, constraint);
-    	
-    	constraint.gridx = 0;
-    	constraint.gridy = 3;
-    	constraint.gridwidth = 1;
     	panel.add(category, constraint);
     	constraint.gridx = 1;
-    	constraint.gridy = 3;
+    	constraint.gridy = 0;
     	constraint.gridwidth = 2;
     	panel.add(myCategoryBox, constraint);
     	
@@ -116,7 +86,7 @@ public class RegisterScreen {
     	mySubmit.setEnabled(true);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-    			new EventRegistration(getEvent(), getEmail());
+    			new EventRegistration("FIRST", "LAST", "EMAIL", getEvent());
 				myTimer.stop();
 				myFrame.dispose();
     		}
@@ -140,18 +110,6 @@ public class RegisterScreen {
 	        }
 	    });
 	}
-    
-    private String getFirstName() {
-    	return myFirstName.getText().trim();
-    }
-    
-    private String getLastName() {
-    	return myLastName.getText().trim();
-    }
-    
-    private String getEmail() {
-    	return myEmail.getText().trim();
-    }
     
     private String getEvent() {
     	return myCategoryBox.getSelectedItem().toString();

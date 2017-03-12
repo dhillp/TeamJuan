@@ -6,14 +6,13 @@ public class ProjectMain {
 	/*
 	 * WHAT STILL NEEDS TO BE DONE:
 	 * 
-	 * 1.	Need back-end for logging in which checks if the email being
-	 * 		used to login is in the file or not then logs them in if it is
-	 * 		(otherwise a pop-up will appear saying account doesn't exist)
-	 * 2.	EventRegistration.java: Change it to where it accepts only email
-	 * 		and event as inputs and then looks up the corresponding info for
-	 * 		the user in the system registration data file and then stores that
-	 * 		in the data file
-	 * 3.	Set up the GUI to work with the back-end.
+	 * 1.	Display upcoming events in the UpcomingEventScreen
+	 * 		like how the Judging schedule is displayed.
+	 * 2.	Login needs to read first name, last name and email from the data file
+	 * 		then pass it to MainWindow, which will pass it to RegisterScreen
+	 * 		so that all the user has to select in the register screen
+	 * 		is the event. Then first name, last name, email and event get passed
+	 * 		into EventRegistration.
 	 */
 	
 	public static void main(String[] theArgs) {

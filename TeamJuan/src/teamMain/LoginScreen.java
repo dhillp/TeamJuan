@@ -60,7 +60,8 @@ public final class LoginScreen {
     		public void actionPerformed(ActionEvent e) {
     			try {
 					if(ReadFile(myEmail.getText().toString())){
-					new RegisterScreen();
+						new MainWindow();
+						myFrame.dispose();
 					}else{
 						JOptionPane.showMessageDialog(myFrame, "Email not registered");
 					}
