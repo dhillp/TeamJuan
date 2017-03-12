@@ -10,8 +10,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import javax.swing.Timer;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -22,9 +30,9 @@ import javax.swing.SwingConstants;
 public class CreateAccountScreen {
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
 	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();
-	private JTextField myFirstName;
-	private JTextField myLastName;
-	private JTextField myEmail;
+	private static JTextField myFirstName;
+	private static JTextField myLastName;
+	private static JTextField myEmail;
 	private JLabel myEmailWarning;
 	private JButton mySubmit;
 	private JFrame myFrame;
@@ -109,7 +117,13 @@ public class CreateAccountScreen {
     	mySubmit.setEnabled(false);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-				//ADD USER TO FILE
+    			System.out.println("ok");
+    			System.out.println(getFirstName());
+    			System.out.println(getLastName());
+    			System.out.println(getEmail());
+    			//reading();
+				writeFile();
+    			
 				myTimer.stop();
 				myFrame.dispose();
     		}
@@ -130,24 +144,81 @@ public class CreateAccountScreen {
 	        			&& myLastName.getText().length() > 0
 	        			&& myFirstName.getText().length() <= 20
 	        			&& myLastName.getText().length() <= 20) {
+	        
 	        		mySubmit.setEnabled(true);
 	        	} else {
 	        		mySubmit.setEnabled(false);
 	        	}
+	       
 	        }
 	    });
 	}
-    
-    private String getFirstName() {
-    	return myFirstName.getText().trim();
+	
+	private void reading()throws IOException{
+			
+			ArrayList<String> input = new ArrayList<>();
+			String data;
+			Scanner inFile = new Scanner(new File("judge.txt"));
+			int i = 0;
+			while(inFile.hasNextLine())
+			{
+			   data = inFile.nextLine();
+			   input.add(i, data);
+			   i++;
+			   
+			}
+
+			ArrayList<String> test = null;
+			test = input;
+			String[] columns = new String[] {
+					"First Name", "Last Name", "Time", "Date", "Category"
+			}; 
+			DefaultTableModel model = new DefaultTableModel(columns, 0);
+			for(int i2 = 2; i < test.size(); i2++) {
+				String temp = test.get(i2);
+				String[] temp2 = temp.split(",");
+				model.addRow(new Object[] {temp2[0], temp2[1], temp2[2], temp2[3], temp2[4]});
+
+			}
+			System.out.println(model.toString());
+		
+	}
+			
+	
+	private static String myFirst;
+	private static String myLast;
+	private static String myEmail2;
+
+	
+	
+	public static void writeFile(){
+        String fileName = "Data2.txt";
+        try {
+            FileWriter fileWriter =
+                new FileWriter(fileName, true);
+            BufferedWriter bufferedWriter =
+                new BufferedWriter(fileWriter);
+            bufferedWriter.write(getFirstName() + "," + getLastName() + "," + getEmail());
+            bufferedWriter.newLine();
+			bufferedWriter.close();
+        }
+        catch(IOException ex) {
+            System.out.println(
+                "Error writing to file '"
+                + fileName + "'");
+        }
     }
     
-    private String getLastName() {
-    	return myLastName.getText().trim();
+    private static String getFirstName() {
+    	return myFirstName.getText().toString();
     }
     
-    private String getEmail() {
-    	return myEmail.getText().trim();
+    private static String getLastName() {
+    	return myLastName.getText().toString();
+    }
+    
+    private static String getEmail() {
+    	return myEmail.getText().toString();
     }
     
     private boolean emailTaken() {
