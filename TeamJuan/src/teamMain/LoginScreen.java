@@ -61,6 +61,7 @@ public final class LoginScreen {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String email = myEmail.getText();
+				readUserInfo();
 				if (email !=  null && email != "") {
 					for (int i = 0; i < myCandidates.size(); i++) {
 						if (email.equals(myCandidates.get(i).email)) {
