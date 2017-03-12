@@ -5,6 +5,12 @@ import java.io.File;
 public class ProjectMain {
 
 	/*
+	 * CreateAccount doesn't check to see if the email is already
+	 * in the system, so you can register the same email twice.
+	 * Need to fix that.
+	 */
+	
+	/*
 	 * CHANGES:
 	 * 1. I added a Person class to make the log-in process easier.
 	 * 2. I modified the judgeScheduleScreen and called it "DisplayFile" 
