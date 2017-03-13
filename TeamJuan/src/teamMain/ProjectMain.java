@@ -4,10 +4,13 @@ import java.io.File;
 
 public class ProjectMain {
 
-	/*
+	/* LAST THING(?):
 	 * CreateAccount doesn't check to see if the email is already
 	 * in the system, so you can register the same email twice.
-	 * Need to fix that.
+	 * Need to fix that by writing code for the emailTaken() function.
+	 * 
+	 * I think that's that last thing and then we just have to clean
+	 * up the code, add comments and all that.
 	 */
 	
 	/*
