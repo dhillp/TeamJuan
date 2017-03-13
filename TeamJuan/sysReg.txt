@@ -1,16 +1,17 @@
-kevin,nguyen,Kevin@yahoo.com
-joe,joe,joe
-st,st,sup
-hello,lastname,hello@gmail.com
-hi,hello,hi
-FirstN,LastN,myEmail@gmail.com
-Ftest,Ltest,test@gmail.com
-fNew,lNew,newEmail@gmail.com
-fTest2,lTest2,test@gmail.com
-hi,hi,hi
-michael, steven, ms@ms.com
-do,do,do
-hi,hi,hihi
-fox,dog,foxdog
-bbb,ooo,qqq
-test,test,tests
+kevin,nguyen,Kevin@yahoo.com,Judge
+joe,joe,joe,Attendee
+st,st,sup,Attendee
+hello,lastname,hello@gmail.com,Judge
+hi,hello,hi,Attendee
+FirstN,LastN,myEmail@gmail.com,Attendee
+Ftest,Ltest,test@gmail.com,Attendee
+fNew,lNew,newEmail@gmail.com,Attendee
+fTest2,lTest2,test@gmail.com,Attendee
+hi,hi,hi,Attendee
+michael, steven, ms@ms.com,Attendee
+do,do,do,Attendee
+hi,hi,hihi,Attendee
+fox,dog,foxdog,Attendee
+bbb,ooo,qqq,Attendee
+test,test,tests,Attendee
+tung,kong,tk@gmail.com,Judge

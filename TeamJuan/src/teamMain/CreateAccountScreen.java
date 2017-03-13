@@ -139,7 +139,7 @@ public class CreateAccountScreen {
     	mySubmit.setEnabled(false);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-    			myCandidates.add(new Person(getFirstName(), getLastName(), getEmail()));
+    			myCandidates.add(new Person(getFirstName(), getLastName(), getEmail(), getRadioButtonSelected()));
     			System.out.println("ok");
     			System.out.println(getFirstName());
     			System.out.println(getLastName());

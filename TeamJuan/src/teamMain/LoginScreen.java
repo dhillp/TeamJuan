@@ -101,8 +101,8 @@ public final class LoginScreen {
 		//myCandidates = new ArrayList<Person>();
 		try {
 			ArrayList<String> usrData = new ReadFile().fileToArray(new File("sysReg.txt"));
-			for (int i = 0; i < usrData.size(); i += 3) {
-				Person p = new Person(usrData.get(i), usrData.get(i+1), usrData.get(i+2));
+			for (int i = 0; i < usrData.size(); i += 4) {
+				Person p = new Person(usrData.get(i), usrData.get(i+1), usrData.get(i+2), usrData.get(i+3));
 				myCandidates.add(p);
 			}
 		} catch (FileNotFoundException e) {

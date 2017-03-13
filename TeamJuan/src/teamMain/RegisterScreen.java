@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -88,7 +89,12 @@ public class RegisterScreen {
     	mySubmit.setEnabled(true);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-    			new EventRegistration(p.firstName, p.lastName, p.email, getEvent());
+    			if(p.personType.equals("Judge")) {
+    				JOptionPane.showMessageDialog(myFrame, "Judges cannot register for event.");
+    				
+    			} else {
+    				new EventRegistration(p.firstName, p.lastName, p.email, getEvent());
+    			}
 				myTimer.stop();
 				myFrame.dispose();
     		}
