@@ -11,3 +11,7 @@ fNew,lNew,Ideal Weaving Show, November 4,newEmail@gmail.com
 joe,joe,Ideal Weaving Show, November 4,joe
 st,st,Weaving Race,  November 22,sup
 fox,dog,London Weaving Marathon, October 12,foxdog
+t,k,New Year's Weaving, November 11,tk2@yahoo.com
+team,juan,New Year's Weaving, November 11,tj@gmail.com
+team,juan,Weaving Race,  November 22,tj@gmail.com
+team,juan,London Weaving Marathon, October 12,tj@gmail.com

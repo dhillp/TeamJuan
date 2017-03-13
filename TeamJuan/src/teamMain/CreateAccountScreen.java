@@ -236,8 +236,9 @@ public class CreateAccountScreen {
                 new FileWriter(fileName, true);
             BufferedWriter bufferedWriter =
                 new BufferedWriter(fileWriter);
-            bufferedWriter.write(getFirstName() + "," + getLastName() + "," + getEmail() + "," + getRadioButtonSelected());
             bufferedWriter.newLine();
+            bufferedWriter.write(getFirstName() + "," + getLastName() + "," + getEmail() + "," + getRadioButtonSelected());
+            
 			bufferedWriter.close();
         }
         catch(IOException ex) {
