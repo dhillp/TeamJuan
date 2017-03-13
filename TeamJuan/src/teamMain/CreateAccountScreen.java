@@ -1,6 +1,7 @@
 package teamMain;
 
 import java.awt.BorderLayout;
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -17,14 +18,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.Scanner;
 
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -34,11 +39,15 @@ public class CreateAccountScreen {
 	private static JTextField myFirstName;
 	private static JTextField myLastName;
 	private static JTextField myEmail;
+	
+	private JRadioButton judgeButton = new JRadioButton("Judge");
+	private JRadioButton attendeeButton = new JRadioButton("Attendee");
 	private JLabel myEmailWarning;
 	private JButton mySubmit;
 	private JFrame myFrame;
 	private Timer myTimer;
 	private ArrayList<Person> myCandidates;
+	private static ButtonGroup myRadioButtonGroup = new ButtonGroup();
 //	private static Person p;
 	
 	public CreateAccountScreen(ArrayList<Person> myCandidates) {
@@ -68,6 +77,12 @@ public class CreateAccountScreen {
 		myFirstName = new JTextField(20);
 		myLastName = new JTextField(20);
 		myEmail = new JTextField(40);
+		
+		attendeeButton.setSelected(true);
+		
+		myRadioButtonGroup.add(attendeeButton);
+		myRadioButtonGroup.add(judgeButton);
+		
 		JLabel fName = new JLabel("Enter First Name: ");
 		JLabel lName = new JLabel("Enter Last Name: ");
 		JLabel email = new JLabel("Enter Email: ");
@@ -109,8 +124,11 @@ public class CreateAccountScreen {
     	
     	createButtons();
     	JPanel panel2 = new JPanel();
+    	
     	panel2.add(mySubmit);
     	JPanel panel3 = new JPanel();
+    	panel3.add(attendeeButton);
+    	panel3.add(judgeButton);
     	myFrame.getContentPane().add(panel3, BorderLayout.NORTH);
     	myFrame.getContentPane().add(panel, BorderLayout.CENTER);
     	myFrame.getContentPane().add(panel2, BorderLayout.SOUTH);
@@ -135,6 +153,7 @@ public class CreateAccountScreen {
     	});
     }
 	
+	
 	private void createTimer() {
 		myTimer = new Timer(100, new ActionListener() {
 	        @Override
@@ -143,6 +162,7 @@ public class CreateAccountScreen {
 					if (emailTaken(myEmail.getText())) {
 						myEmailWarning.setText("This Email is already registered.");
 						myEmailWarning.setVisible(true);
+						mySubmit.setEnabled(false);
 						
 					} else {
 						myEmailWarning.setText("");
@@ -206,6 +226,9 @@ public class CreateAccountScreen {
 	private static String myLast;
 	private static String myEmail2;
 	
+	/**
+	 * Saves account registration information to database(text file).
+	 */
 	public static void writeFile(){
         String fileName = "sysReg.txt";
         try {
@@ -213,7 +236,7 @@ public class CreateAccountScreen {
                 new FileWriter(fileName, true);
             BufferedWriter bufferedWriter =
                 new BufferedWriter(fileWriter);
-            bufferedWriter.write(getFirstName() + "," + getLastName() + "," + getEmail());
+            bufferedWriter.write(getFirstName() + "," + getLastName() + "," + getEmail() + "," + getRadioButtonSelected());
             bufferedWriter.newLine();
 			bufferedWriter.close();
         }
@@ -224,6 +247,18 @@ public class CreateAccountScreen {
         }
     }
     
+	private static String getRadioButtonSelected() {
+		String buttonText = "";
+		Enumeration elements = myRadioButtonGroup.getElements();
+	    while (elements.hasMoreElements()) {
+	      AbstractButton button = (AbstractButton)elements.nextElement();
+	      if (button.isSelected()) {
+	        buttonText = button.getText();
+	      }
+	    }
+	    return buttonText;
+	}
+	
     private static String getFirstName() {
     	return myFirstName.getText().toString();
     }
@@ -236,6 +271,12 @@ public class CreateAccountScreen {
     	return myEmail.getText().toString();
     }
     
+    /**
+     * Checks if email is already registered.
+     * @param theEmail
+     * @return
+     * @throws FileNotFoundException
+     */
     private boolean emailTaken(String theEmail) throws FileNotFoundException {
     	//SEARCH FILE IF EMAIL IS ALREADY REGISTERED
     	ArrayList<String> input = new ArrayList<>();
@@ -257,8 +298,6 @@ public class CreateAccountScreen {
 			String[] temp2 = temp.split(",");
 			emailList.add(temp2[2]);
 			
-			
-
 		}
 		
 		if(emailList.contains(theEmail)) {

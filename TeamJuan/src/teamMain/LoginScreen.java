@@ -26,7 +26,7 @@ public final class LoginScreen {
 	private JButton myLoginButton;
 	private JButton myCreateAccount;
 	private JTextField myEmail;
-	private ArrayList<Person> myCandidates;
+	private ArrayList<Person> myCandidates = new ArrayList<>();
 
 	public LoginScreen() {
 		readUserInfo();
@@ -93,10 +93,12 @@ public final class LoginScreen {
 	 * Cynthia --
 	 * Read's user data and separates the information into a Person object. 
 	 * A list stores each candidate's info in a person object. 
-	 * This is to make the code more modular and also decouples the code. 
+	 * This is to make the code more modular and also decouples the code.
+	 * 
+	 *  Edited: took out initialization of instance variable.
 	 */
 	public void readUserInfo() {
-		myCandidates = new ArrayList<Person>();
+		//myCandidates = new ArrayList<Person>();
 		try {
 			ArrayList<String> usrData = new ReadFile().fileToArray(new File("sysReg.txt"));
 			for (int i = 0; i < usrData.size(); i += 3) {
