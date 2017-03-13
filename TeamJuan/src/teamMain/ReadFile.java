@@ -27,7 +27,7 @@ public class ReadFile {
 			}
 		}
 		input.close();
-		System.out.println(list.toString());
+		//System.out.println(list.toString());
 		return list;
 	}
 

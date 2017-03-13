@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.swing.Timer;
@@ -138,21 +139,33 @@ public class CreateAccountScreen {
 		myTimer = new Timer(100, new ActionListener() {
 	        @Override
 	        public void actionPerformed(ActionEvent theEvent) {
-	        	if (emailTaken()) {
-	        		myEmailWarning.setText("This Email is already registered.");
-	        	} else {
-	        		myEmailWarning.setText("");
-	        	}
-	        	if (!emailTaken()
-	        			&& myFirstName.getText().length() > 0
-	        			&& myLastName.getText().length() > 0
-	        			&& myFirstName.getText().length() <= 20
-	        			&& myLastName.getText().length() <= 20) {
-	        
-	        		mySubmit.setEnabled(true);
-	        	} else {
-	        		mySubmit.setEnabled(false);
-	        	}
+	        	try {
+					if (emailTaken(myEmail.getText())) {
+						myEmailWarning.setText("This Email is already registered.");
+						myEmailWarning.setVisible(true);
+						
+					} else {
+						myEmailWarning.setText("");
+					}
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	        	try {
+					if (!emailTaken(myEmail.getText())
+							&& myFirstName.getText().length() > 0
+							&& myLastName.getText().length() > 0
+							&& myFirstName.getText().length() <= 20
+							&& myLastName.getText().length() <= 20) {
+      
+						mySubmit.setEnabled(true);
+					} else {
+						mySubmit.setEnabled(false);
+					}
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	       
 	        }
 	    });
@@ -184,7 +197,7 @@ public class CreateAccountScreen {
 				model.addRow(new Object[] {temp2[0], temp2[1], temp2[2], temp2[3], temp2[4]});
 
 			}
-			System.out.println(model.toString());
+			//System.out.println(model.toString());
 		
 	}
 			
@@ -223,8 +236,35 @@ public class CreateAccountScreen {
     	return myEmail.getText().toString();
     }
     
-    private boolean emailTaken() {
+    private boolean emailTaken(String theEmail) throws FileNotFoundException {
     	//SEARCH FILE IF EMAIL IS ALREADY REGISTERED
+    	ArrayList<String> input = new ArrayList<>();
+		String data;
+		Scanner inFile = new Scanner(new File("sysReg.txt"));
+		int i = 0;
+		while(inFile.hasNextLine())
+		{
+		   data = inFile.nextLine();
+		   input.add(i, data);
+		   i++;
+		   
+		}
+
+		ArrayList<String> emailList = new ArrayList<>();
+		
+		for(int j = 0; i < input.size(); j++) {
+			String temp = input.get(j);
+			String[] temp2 = temp.split(",");
+			emailList.add(temp2[2]);
+			System.out.println(Arrays.toString(emailList.toArray()));
+			
+
+		}
+		
+		if(emailList.contains(theEmail)) {
+			return true;
+		}
+		inFile.close();
     	return false;
     }
 }
