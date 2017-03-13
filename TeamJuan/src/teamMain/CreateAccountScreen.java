@@ -222,10 +222,6 @@ public class CreateAccountScreen {
 	}
 			
 	
-	private static String myFirst;
-	private static String myLast;
-	private static String myEmail2;
-	
 	/**
 	 * Saves account registration information to database(text file).
 	 */
