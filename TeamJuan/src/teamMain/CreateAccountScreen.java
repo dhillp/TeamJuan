@@ -252,11 +252,11 @@ public class CreateAccountScreen {
 
 		ArrayList<String> emailList = new ArrayList<>();
 		
-		for(int j = 0; i < input.size(); j++) {
+		for(int j = 0; j < input.size(); j++) {
 			String temp = input.get(j);
 			String[] temp2 = temp.split(",");
 			emailList.add(temp2[2]);
-			System.out.println(Arrays.toString(emailList.toArray()));
+			
 			
 
 		}
