@@ -30,7 +30,6 @@ public class RegisterScreen {
 	private JComboBox myCategoryBox;
 	private JButton mySubmit;
 	private JFrame myFrame;
-	private Timer myTimer;
 	private Person p;
 	
 	
@@ -41,16 +40,9 @@ public class RegisterScreen {
 		myFrame.setSize(650, 250);
 		myFrame.setResizable(false);
 		createPanel();
-		createTimer();
 		//myTimer.start();
 		myFrame.setLocation(SCREEN_SIZE.width / 2 - myFrame.getWidth() / 2,
 				SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
-		myFrame.addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowClosing(WindowEvent theEvent) {
-				myTimer.stop();
-			}
-		});
 		myFrame.setVisible(true);
 	}
 	
@@ -95,29 +87,10 @@ public class RegisterScreen {
     			} else {
     				new EventRegistration(p.firstName, p.lastName, p.email, getEvent());
     			}
-				myTimer.stop();
 				myFrame.dispose();
     		}
     	});
     }
-
-	
-	private void createTimer() {
-		myTimer = new Timer(100, new ActionListener() {
-	        @Override
-	        public void actionPerformed(ActionEvent theEvent) {
-	        	/* if (myFirstName.getText().length() > 0
-	        			&& myLastName.getText().length() > 0
-	        			&& myFirstName.getText().length() <= 20
-	        			&& myLastName.getText().length() <= 20
-	        			&& COMBO BOXES ARE SELECTED) {
-	        		mySubmit.setEnabled(true);
-	        	} else {
-	        		mySubmit.setEnabled(false);
-	        	} */
-	        }
-	    });
-	}
     
     private String getEvent() {
     	return myCategoryBox.getSelectedItem().toString();
