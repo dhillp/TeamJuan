@@ -18,3 +18,5 @@ tung,kong,tk@gmail.com,Judge
 t,k,tk2@yahoo.com,Attendee
 some,person,sp@gmail.com,Attendee
 team,juan,tj@gmail.com,Attendee
+John,Smith,jsmith@gmail.com,Attendee
+TestFirst,TestLast,TestEmail@email.com,Judge

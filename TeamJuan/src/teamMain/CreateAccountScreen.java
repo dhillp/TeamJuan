@@ -1,7 +1,6 @@
 package teamMain;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -17,12 +16,10 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Scanner;
 
 import javax.swing.Timer;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -48,7 +45,6 @@ public class CreateAccountScreen {
 	private Timer myTimer;
 	private ArrayList<Person> myCandidates;
 	private static ButtonGroup myRadioButtonGroup = new ButtonGroup();
-//	private static Person p;
 	
 	public CreateAccountScreen(ArrayList<Person> myCandidates) {
 		this.myCandidates = myCandidates;
@@ -191,35 +187,34 @@ public class CreateAccountScreen {
 	    });
 	}
 	
-	private void reading()throws IOException{
-			
-			ArrayList<String> input = new ArrayList<>();
-			String data;
-			Scanner inFile = new Scanner(new File("judge.txt"));
-			int i = 0;
-			while(inFile.hasNextLine())
-			{
-			   data = inFile.nextLine();
-			   input.add(i, data);
-			   i++;
-			   
-			}
-
-			ArrayList<String> test = null;
-			test = input;
-			String[] columns = new String[] {
-					"First Name", "Last Name", "Time", "Date", "Category"
-			}; 
-			DefaultTableModel model = new DefaultTableModel(columns, 0);
-			for(int i2 = 2; i < test.size(); i2++) {
-				String temp = test.get(i2);
-				String[] temp2 = temp.split(",");
-				model.addRow(new Object[] {temp2[0], temp2[1], temp2[2], temp2[3], temp2[4]});
-
-			}
-			//System.out.println(model.toString());
-		
-	}
+//	private void reading()throws IOException{
+//			
+//			ArrayList<String> input = new ArrayList<>();
+//			String data;
+//			Scanner inFile = new Scanner(new File("judge.txt"));
+//			int i = 0;
+//			while(inFile.hasNextLine())
+//			{
+//			   data = inFile.nextLine();
+//			   input.add(i, data);
+//			   i++;
+//			   
+//			}
+//
+//			ArrayList<String> test = null;
+//			test = input;
+//			String[] columns = new String[] {
+//					"First Name", "Last Name", "Time", "Date", "Category"
+//			}; 
+//			DefaultTableModel model = new DefaultTableModel(columns, 0);
+//			for(int i2 = 2; i < test.size(); i2++) {
+//				String temp = test.get(i2);
+//				String[] temp2 = temp.split(",");
+//				model.addRow(new Object[] {temp2[0], temp2[1], temp2[2], temp2[3], temp2[4]});
+//
+//			}
+//			inFile.close();
+//	}
 			
 	
 	/**
@@ -246,7 +241,7 @@ public class CreateAccountScreen {
     
 	private static String getRadioButtonSelected() {
 		String buttonText = "";
-		Enumeration elements = myRadioButtonGroup.getElements();
+		Enumeration<AbstractButton> elements = myRadioButtonGroup.getElements();
 	    while (elements.hasMoreElements()) {
 	      AbstractButton button = (AbstractButton)elements.nextElement();
 	      if (button.isSelected()) {
@@ -298,6 +293,7 @@ public class CreateAccountScreen {
 		}
 		
 		if(emailList.contains(theEmail)) {
+			inFile.close();
 			return true;
 		}
 		inFile.close();

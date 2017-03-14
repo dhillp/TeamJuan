@@ -1,8 +1,6 @@
 package teamMain;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-//import java.awt.GridBagConstraints;
-//import java.awt.GridBagLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,8 +17,6 @@ public final class MainWindow {
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
 	
 	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();
-	
-//    private JButton myLoginButton;
 
     private JButton myUpcomingButton;
     
@@ -28,19 +24,12 @@ public final class MainWindow {
     
     private JButton myRegister;
     
-//    private JButton myCreateAccount;
-    
-//    private JTable myTable;
-    
-//    private JTextField myEmail;
-    
-//    private JPasswordField myPassword;
-    
     private JFrame myFrame;
-    private Person p;
+    
+    private Person myPerson;
     
     public MainWindow(Person p) {
-    	this.p = p;
+    	myPerson = p;
 		myFrame = new JFrame();
 		myFrame.setTitle("JustBeWeave");
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,69 +41,16 @@ public final class MainWindow {
     }
     
     private void createPanel() {
-//    	JPanel panel2 = new JPanel(new GridBagLayout());
-//    	JPanel panel3 = new JPanel();
-//    	GridBagConstraints c = new GridBagConstraints();
-//    	c.fill = GridBagConstraints.HORIZONTAL;
-//    	myEmail = new JTextField(20);
-//    	myPassword = new JPasswordField(20);
-//    	JLabel user = new JLabel("Username: ");
-//    	JLabel pass = new JLabel("Password: ");
-//    	c.gridx = 0;
-//    	c.gridy = 0;
-//    	c.gridwidth = 1;
-//    	panel2.add(user, c);
-//    	c.gridx = 1;
-//    	c.gridy = 0;
-//    	c.gridwidth = 2;
-//    	panel2.add(myEmail, c);
-//    	c.gridx = 0;
-//    	c.gridy = 1;
-//    	c.gridwidth = 1;
-//    	panel2.add(pass, c);
-//    	c.gridx = 1;
-//    	c.gridy = 1;
-//    	c.gridwidth = 2;
-//    	panel2.add(myPassword, c);
     	createButtons();
     	JPanel panel = new JPanel();
-//    	panel3.add(myLoginButton);
-//    	panel3.add(myCreateAccount);
     	panel.add(myRegister);
-//    	JPanel panel3 = new JPanel();
     	panel.add(myUpcomingButton);
     	panel.add(myJSchedButton);
-    	JLabel upcomingEvents = new JLabel("Upcoming Events: ");
+    	JLabel upcomingEvents = new JLabel(" Welcome!");
     	myFrame.getContentPane().add(upcomingEvents, BorderLayout.PAGE_START);
-//    	JTable myTable = new JTable();
-//    	JPanel p2 = new JPanel();
-//    	readEvents r = new readEvents();
-//		ArrayList<String> al = r.getdata();
-//		for (int i = 0; i < al.size(); i++) {
-//			p2.add(new JLabel(al.get(i) + "\n"));
-//		}
-//    	myFrame.getContentPane().add(p2, BorderLayout.CENTER);
-//    	myFrame.getContentPane().add(new JScrollPane(myTable), BorderLayout.CENTER);
-    	myFrame.getContentPane().add(panel, BorderLayout.PAGE_START);
-//    	myFrame.getContentPane().add(panel2, BorderLayout.CENTER);
-//    	myFrame.getContentPane().add(panel3, BorderLayout.PAGE_END);
+    	myFrame.getContentPane().add(panel, BorderLayout.CENTER);
     }
     private void createButtons() {
-//    	myLoginButton = new JButton("Login");
-//    	myLoginButton.addActionListener(new ActionListener() {
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				// TODO Auto-generated method stub
-//				
-//			}
-//    	});
-//    	myCreateAccount = new JButton("Create Account");
-//    	myCreateAccount.addActionListener( new ActionListener() {
-//    		@Override
-//    		public void actionPerformed(ActionEvent e) {
-//    			new CreateAccountScreen();
-//    		}
-//    	});
     	myUpcomingButton = new JButton("Upcoming Events");
     	myUpcomingButton.addActionListener(new ActionListener() {
 			@Override
@@ -122,7 +58,6 @@ public final class MainWindow {
 				try {
 					new ListScreen(new File("events.txt"), "Upcoming Events");
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -135,7 +70,6 @@ public final class MainWindow {
 				try {
 					new ListScreen(new File("judge.txt"), "Judging Schedule");
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -144,7 +78,7 @@ public final class MainWindow {
     	myRegister.addActionListener(new ActionListener() {
     		@Override
 			public void actionPerformed(ActionEvent theEvent) {
-				new RegisterScreen(p);
+				new RegisterScreen(myPerson);
 			}
     	});
     }

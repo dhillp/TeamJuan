@@ -1,6 +1,5 @@
 package teamMain;
 import java.awt.EventQueue;
-import java.io.File;
 
 public class ProjectMain {
 
@@ -25,7 +24,6 @@ public class ProjectMain {
 	public static void main(String[] theArgs) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-//				new MainWindow();
 				new LoginScreen();
 			}
 		});

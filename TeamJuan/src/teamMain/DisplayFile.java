@@ -28,6 +28,7 @@ public class DisplayFile {
 		   i++;
 		   
 		}
+		inFile.close();
 		return input;
 	}
 	

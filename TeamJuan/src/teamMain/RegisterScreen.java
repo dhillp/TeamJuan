@@ -7,10 +7,7 @@ import java.awt.GridBagLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
-import javax.swing.Timer;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -18,16 +15,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 
 public class RegisterScreen {
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
 	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();
-	private String myFirstName;
-	private String myLastName;
-	private String myEmail;
-	private JComboBox myCategoryBox;
+	private JComboBox<Object> myCategoryBox;
 	private JButton mySubmit;
 	private JFrame myFrame;
 	private Person p;
@@ -40,7 +33,6 @@ public class RegisterScreen {
 		myFrame.setSize(650, 250);
 		myFrame.setResizable(false);
 		createPanel();
-		//myTimer.start();
 		myFrame.setLocation(SCREEN_SIZE.width / 2 - myFrame.getWidth() / 2,
 				SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
 		myFrame.setVisible(true);
@@ -50,12 +42,9 @@ public class RegisterScreen {
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints constraint = new GridBagConstraints();
 		constraint.fill = GridBagConstraints.HORIZONTAL;
-		myCategoryBox = new JComboBox();
+		myCategoryBox = new JComboBox<Object>();
 		readEvents r = new readEvents();
-		myCategoryBox.setModel(new DefaultComboBoxModel(r.getdata().toArray()));
-		//JLabel fName = new JLabel("Enter First Name: ");
-		//JLabel lName = new JLabel("Enter Last Name: ");
-		//JLabel email = new JLabel("Enter Email: ");
+		myCategoryBox.setModel(new DefaultComboBoxModel<Object>(r.getdata().toArray()));
 		JLabel category = new JLabel("Select Event/Category: ");
     	
     	constraint.gridx = 0;

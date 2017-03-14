@@ -15,3 +15,5 @@ t,k,New Year's Weaving, November 11,tk2@yahoo.com
 team,juan,New Year's Weaving, November 11,tj@gmail.com
 team,juan,Weaving Race,  November 22,tj@gmail.com
 team,juan,London Weaving Marathon, October 12,tj@gmail.com
+John,Smith,Ideal Weaving Show, November 4,jsmith@gmail.com
+John,Smith,New Year's Weaving, November 11,jsmith@gmail.com
