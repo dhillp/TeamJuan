@@ -164,11 +164,11 @@ public class CreateAccountScreen {
 						myEmailWarning.setText("");
 					}
 				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 	        	try {
 					if (!emailTaken(myEmail.getText())
+							&& myEmail.getText().length() > 0
 							&& myFirstName.getText().length() > 0
 							&& myLastName.getText().length() > 0
 							&& myFirstName.getText().length() <= 20
@@ -179,7 +179,6 @@ public class CreateAccountScreen {
 						mySubmit.setEnabled(false);
 					}
 				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 	       
