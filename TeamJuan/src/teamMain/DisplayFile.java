@@ -55,8 +55,8 @@ public class DisplayFile {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		String[] judgeColumns = new String[] { "First Name", "Last Name", "Time", "Date", "Category" };
-		String[] categoryColumns = new String[] { "Category", "Date" };
+		String[] judgeColumns = new String[] { "First Name", "Last Name", "Time", "Date", "Event" };
+		String[] categoryColumns = new String[] { "Event", "Date" };
 
 		DefaultTableModel model;
 		int start = isJudge ? 2 : 0;
