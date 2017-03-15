@@ -324,6 +324,7 @@ public class CreateAccountScreen {
      * Checks if email is already registered.
      * 
      * @author Tung
+     * @author Kevin
      * @param theEmail email string to be checked for
      * @return true if email is taken, false otherwise
      * @throws FileNotFoundException
