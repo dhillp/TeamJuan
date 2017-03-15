@@ -25,7 +25,10 @@ public class RegisterScreen {
 	private JFrame myFrame;
 	private Person myPerson;
 	
-	
+	/**
+	 * @author Pamaldeep
+	 * @param thePerson
+	 */
 	public RegisterScreen(Person thePerson) {
 		myPerson = thePerson;
 		myFrame = new JFrame();
@@ -38,6 +41,9 @@ public class RegisterScreen {
 		myFrame.setVisible(true);
 	}
 	
+	/**
+	 * @author Pamaldeep and Harman
+	 */
 	private void createPanel() {
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints constraint = new GridBagConstraints();
@@ -65,6 +71,9 @@ public class RegisterScreen {
     	myFrame.getContentPane().add(panel2, BorderLayout.SOUTH);
 	}
 	
+	/**
+	 * @author Harman and Tung
+	 */
 	private void createButtons() {
     	mySubmit = new JButton("Submit");
     	mySubmit.setEnabled(true);
@@ -80,7 +89,10 @@ public class RegisterScreen {
     		}
     	});
     }
-    
+     /**
+      * @author Harman
+      * @return
+      */
     private String getEvent() {
     	return myCategoryBox.getSelectedItem().toString();
     }

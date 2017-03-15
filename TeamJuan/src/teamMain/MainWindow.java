@@ -28,6 +28,10 @@ public final class MainWindow {
     
     private Person myPerson;
     
+    /**
+     * @author Pamaldeep
+     * @param p
+     */
     public MainWindow(Person p) {
     	myPerson = p;
 		myFrame = new JFrame();
@@ -40,6 +44,9 @@ public final class MainWindow {
 		myFrame.setVisible(true);
     }
     
+    /**
+     * @author Pamaldeep
+     */
     private void createPanel() {
     	createButtons();
     	JPanel panel = new JPanel();
@@ -50,6 +57,10 @@ public final class MainWindow {
     	myFrame.getContentPane().add(upcomingEvents, BorderLayout.PAGE_START);
     	myFrame.getContentPane().add(panel, BorderLayout.CENTER);
     }
+    
+    /**
+     * @author Pamaldeep and Cynthia
+     */
     private void createButtons() {
     	myUpcomingButton = new JButton("Upcoming Events");
     	myUpcomingButton.addActionListener(new ActionListener() {

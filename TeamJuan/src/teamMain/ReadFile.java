@@ -4,11 +4,12 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//Cynthia Tran
-/*
+/**
  * This class' main function is to output an ArrayList
  * given a file and separates each item in the file
  * into the array using the String regex ','
+ * 
+ * @author Cynthia and Kevin
  */
 
 public class ReadFile {

@@ -1,7 +1,10 @@
 package teamMain;
 
-//Cynthia Tran
-// Person class to hold each candidate's information. 
+/**
+ * Person class to hold each candidate's information.
+ * @author Cynthia
+ *
+ */
 
 public class Person {
 	protected String firstName;

@@ -46,6 +46,10 @@ public class CreateAccountScreen {
 	private ArrayList<Person> myCandidates;
 	private static ButtonGroup myRadioButtonGroup = new ButtonGroup();
 	
+	/**
+	 * @author Pamaldeep
+	 * @param theCandidates
+	 */
 	public CreateAccountScreen(ArrayList<Person> theCandidates) {
 		myCandidates = theCandidates;
 		myFrame = new JFrame();
@@ -66,6 +70,9 @@ public class CreateAccountScreen {
 		myFrame.setVisible(true);
 	}
 	
+	/**
+	 * @author Pamaldeep and Tung
+	 */
 	private void createPanel() {
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints constraint = new GridBagConstraints();
@@ -130,6 +137,9 @@ public class CreateAccountScreen {
     	myFrame.getContentPane().add(panel2, BorderLayout.SOUTH);
 	}
 	
+	/**
+	 * @author Pamaldeep
+	 */
 	private void createButtons() {
     	mySubmit = new JButton("Submit");
     	mySubmit.setEnabled(false);
@@ -148,7 +158,9 @@ public class CreateAccountScreen {
     	});
     }
 	
-	
+	/**
+	 * @author Pamaldeep and Kevin
+	 */
 	private void createTimer() {
 		myTimer = new Timer(100, new ActionListener() {
 	        @Override
@@ -217,6 +229,7 @@ public class CreateAccountScreen {
 	
 	/**
 	 * Saves account registration information to database(text file).
+	 * @author Harman
 	 */
 	public static void writeFile(){
         String fileName = "sysReg.txt";
@@ -237,6 +250,10 @@ public class CreateAccountScreen {
         }
     }
     
+	/**
+	 * @author Tung
+	 * @return
+	 */
 	private static String getRadioButtonSelected() {
 		String buttonText = "";
 		Enumeration<AbstractButton> elements = myRadioButtonGroup.getElements();
@@ -249,20 +266,33 @@ public class CreateAccountScreen {
 	    return buttonText;
 	}
 	
+	/**
+	 * @author Kevin
+	 * @return
+	 */
     private static String getFirstName() {
     	return myFirstName.getText().toString();
     }
     
+    /**
+     * @author Kevin
+     * @return
+     */
     private static String getLastName() {
     	return myLastName.getText().toString();
     }
     
+    /**
+     * @author Kevin
+     * @return
+     */
     private static String getEmail() {
     	return myEmail.getText().toString();
     }
     
     /**
      * Checks if email is already registered.
+     * @author Tung
      * @param theEmail
      * @return
      * @throws FileNotFoundException

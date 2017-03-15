@@ -4,6 +4,12 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * 
+ * @author Harman
+ *
+ */
+
 public class EventRegistration {
 	
 	private static String myFirst;

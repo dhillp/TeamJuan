@@ -26,7 +26,10 @@ public final class LoginScreen {
 	private JButton myCreateAccount;
 	private JTextField myEmail;
 	private ArrayList<Person> myCandidates = new ArrayList<>();
-
+	
+	/**
+	 * @author Pamaldeep
+	 */
 	public LoginScreen() {
 		readUserInfo();
 		myFrame = new JFrame();
@@ -39,7 +42,10 @@ public final class LoginScreen {
 				SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
 		myFrame.setVisible(true);
 	}
-
+	
+	/**
+	 * @author Pamaldeep and Kevin
+	 */
 	private void createPanels() {
 		myEmail = new JTextField(30);
 		JLabel email = new JLabel("Enter Email: ");
@@ -89,7 +95,7 @@ public final class LoginScreen {
 	}
 
 	/**
-	 * Cynthia --
+	 * @author Cynthia and Kevin
 	 * Read's user data and separates the information into a Person object. 
 	 * A list stores each candidate's info in a person object. 
 	 * This is to make the code more modular and also decouples the code.

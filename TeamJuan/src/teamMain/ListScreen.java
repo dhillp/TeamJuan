@@ -9,6 +9,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * 
+ * @author Cynthia and Tung
+ *
+ */
+
 public class ListScreen {
 	
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();

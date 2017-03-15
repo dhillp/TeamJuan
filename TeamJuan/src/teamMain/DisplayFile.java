@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
  * This class displays the judge.txt & events.txt files
  * in the GUI. 
  *
+ * @author Cynthia and Tung
  */
 
 public class DisplayFile {
