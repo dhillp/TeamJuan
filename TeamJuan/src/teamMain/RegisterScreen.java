@@ -1,8 +1,5 @@
 package teamMain;
 
-/**
- * @author Pamaldeep, Harman and Tung
- */
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -19,6 +16,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+/**
+ * GUI window for registering for events.
+ * 
+ * @author Pamaldeep
+ * @author Harman
+ */
 
 public class RegisterScreen {
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
@@ -29,8 +32,10 @@ public class RegisterScreen {
 	private Person myPerson;
 	
 	/**
+	 * Constructs the GUI.
+	 * 
 	 * @author Pamaldeep
-	 * @param thePerson
+	 * @param thePerson user that is logged in.
 	 */
 	public RegisterScreen(Person thePerson) {
 		myPerson = thePerson;
@@ -45,7 +50,10 @@ public class RegisterScreen {
 	}
 	
 	/**
-	 * @author Pamaldeep and Harman
+	 * Creates the panels that will be added to the GUI frame.
+	 * 
+	 * @author Pamaldeep
+	 * @author Harman
 	 */
 	private void createPanel() {
 		JPanel panel = new JPanel(new GridBagLayout());
@@ -75,7 +83,9 @@ public class RegisterScreen {
 	}
 	
 	/**
-	 * @author Harman and Tung
+	 * Creates buttons for the GUI.
+	 * 
+	 * @author Harman
 	 */
 	private void createButtons() {
     	mySubmit = new JButton("Submit");
@@ -93,8 +103,10 @@ public class RegisterScreen {
     	});
     }
      /**
+      * Returns the selected event.
+      * 
       * @author Harman
-      * @return
+      * @return selected event as a string
       */
     private String getEvent() {
     	return myCategoryBox.getSelectedItem().toString();

@@ -1,6 +1,16 @@
 package teamMain;
 import java.awt.EventQueue;
 
+/**
+ * Driver for the application.
+ * 
+ * @author Cynthia
+ * @author Harman
+ * @author Kevin
+ * @author Pamaldeep
+ * @author Tung
+ */
+
 public class ProjectMain {
 
 	/* LAST THING(?):
@@ -20,7 +30,11 @@ public class ProjectMain {
 	 * 3. I changed the code in the Login screen for the myLoginButton 
 	 * to involve the Person class and to simplify the code. 
 	 */
-	
+	/**
+	 * Runs the application.
+	 * 
+	 * @param theArgs Used for command-line arguments.
+	 */
 	public static void main(String[] theArgs) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

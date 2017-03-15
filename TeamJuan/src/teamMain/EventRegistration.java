@@ -5,9 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
+ * Saves event registration information to a file.
  * 
  * @author Harman
- *
  */
 
 public class EventRegistration {
@@ -17,7 +17,14 @@ public class EventRegistration {
 	private static String myEvent;
 	private static String myEmail;
 
-	
+	/**
+	 * Constructor.
+	 * 
+	 * @param first First name of user.
+	 * @param last Last name of user.
+	 * @param event The event user is registering for.
+	 * @param email User's email.
+	 */
 	public EventRegistration( String first, String last, String event
 			,String email) {
 		myFirst = first;
@@ -27,6 +34,9 @@ public class EventRegistration {
 		writeFile();
 	}
 	
+	/**
+	 * Writes the registration information to the file.
+	 */
 	public static void writeFile() {
         String fileName = "eventReg.txt";
         try {

@@ -1,8 +1,5 @@
 package teamMain;
 
-/**
- * @author Pamaldeep and Cynthia
- */
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -15,6 +12,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+/**
+ * Main application window that you see after logging in.
+ * 
+ * @author Pamaldeep
+ * @author Cynthia
+ */
 
 public final class MainWindow {
 	
@@ -33,11 +37,13 @@ public final class MainWindow {
     private Person myPerson;
     
     /**
+     * Constructor for the GUI window.
+     * 
      * @author Pamaldeep
-     * @param p
+     * @param thePerson the user that is logged in.
      */
-    public MainWindow(Person p) {
-    	myPerson = p;
+    public MainWindow(Person thePerson) {
+    	myPerson = thePerson;
 		myFrame = new JFrame();
 		myFrame.setTitle("JustBeWeave");
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,6 +55,8 @@ public final class MainWindow {
     }
     
     /**
+     * Creates panel to be added to the frame.
+     * 
      * @author Pamaldeep
      */
     private void createPanel() {
@@ -63,7 +71,10 @@ public final class MainWindow {
     }
     
     /**
-     * @author Pamaldeep and Cynthia
+     * Creates buttons that are added to the GUI.
+     * 
+     * @author Pamaldeep
+     * @author Cynthia
      */
     private void createButtons() {
     	myUpcomingButton = new JButton("Upcoming Events");

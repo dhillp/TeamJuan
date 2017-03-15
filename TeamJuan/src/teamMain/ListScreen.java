@@ -10,8 +10,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ * A GUI that shows a table based on the file parameter.
  * 
- * @author Cynthia and Tung
+ * @author Cynthia 
+ * @author Tung
  *
  */
 
@@ -23,8 +25,13 @@ public class ListScreen {
     
     private JFrame myFrame;
     
-    
-    //comment
+    /**
+     * Constructor that creates the GUI.
+     * 
+     * @param file File to be displayed.
+     * @param name Name of the window.
+     * @throws IOException
+     */
 	public ListScreen(File file, String name) throws IOException {
 		
 		myFrame = new JFrame();

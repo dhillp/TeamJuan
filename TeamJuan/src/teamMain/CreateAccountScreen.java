@@ -1,10 +1,5 @@
 package teamMain;
 
-/**
- * GUI for creating an account.
- * 
- * @author Pamaldeep, Kevin, Tung and Harman
- */
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -34,6 +29,15 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+/**
+ * GUI for creating an account.
+ * 
+ * @author Pamaldeep 
+ * @author Kevin 
+ * @author Tung 
+ * @author Harman
+ */
 
 public class CreateAccountScreen {
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
@@ -80,7 +84,8 @@ public class CreateAccountScreen {
 	/**
 	 * Creates panels for the GUI frame.
 	 * 
-	 * @author Pamaldeep and Tung
+	 * @author Pamaldeep
+	 * @author Tung
 	 */
 	private void createPanel() {
 		JPanel panel = new JPanel(new GridBagLayout());
@@ -174,7 +179,8 @@ public class CreateAccountScreen {
 	 * info is entered in the fields and displays a warning
 	 * message if email has already been registered.
 	 * 
-	 * @author Pamaldeep and Kevin
+	 * @author Pamaldeep 
+	 * @author Kevin
 	 */
 	private void createTimer() {
 		myTimer = new Timer(100, new ActionListener() {

@@ -1,8 +1,5 @@
 package teamMain;
 
-/**
- * @author Pamaldeep, Kevin and Cynthia
- */
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -21,6 +18,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * Initial GUI that is used to log into the application.
+ * 
+ * @author Pamaldeep
+ * @author Kevin
+ * @author Cynthia
+ */
+
 public final class LoginScreen {
 
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();	
@@ -32,6 +37,8 @@ public final class LoginScreen {
 	private ArrayList<Person> myCandidates = new ArrayList<>();
 	
 	/**
+	 * GUI constructor.
+	 * 
 	 * @author Pamaldeep
 	 */
 	public LoginScreen() {
@@ -48,7 +55,10 @@ public final class LoginScreen {
 	}
 	
 	/**
-	 * @author Pamaldeep and Kevin
+	 * Creates panels to be added to the GUI frame.
+	 * 
+	 * @author Pamaldeep
+	 * @author Kevin
 	 */
 	private void createPanels() {
 		myEmail = new JTextField(30);
@@ -99,12 +109,12 @@ public final class LoginScreen {
 	}
 
 	/**
-	 * @author Cynthia and Kevin
 	 * Read's user data and separates the information into a Person object. 
 	 * A list stores each candidate's info in a person object. 
 	 * This is to make the code more modular and also decouples the code.
 	 * 
-	 *  Edited: took out initialization of instance variable.
+	 * @author Cynthia
+	 * @author Kevin
 	 */
 	public void readUserInfo() {
 		//myCandidates = new ArrayList<Person>();

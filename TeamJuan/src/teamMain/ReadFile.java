@@ -9,13 +9,21 @@ import java.util.Scanner;
  * given a file and separates each item in the file
  * into the array using the String regex ','
  * 
- * @author Cynthia and Kevin
+ * @author Cynthia
+ * @author Kevin
  */
 
 public class ReadFile {
 	
 	public ReadFile()  {}
 
+	/**
+	 * Reads a file and outputs an arraylist of file contents.
+	 * 
+	 * @param file File to be opened.
+	 * @return ArrayList of file contents.
+	 * @throws FileNotFoundException
+	 */
 	public ArrayList<String> fileToArray(File file) throws FileNotFoundException  {
 		Scanner input = new Scanner(file);
 		String[] temp = new String[30];
@@ -28,7 +36,6 @@ public class ReadFile {
 			}
 		}
 		input.close();
-		//System.out.println(list.toString());
 		return list;
 	}
 

@@ -11,12 +11,20 @@ import javax.swing.table.DefaultTableModel;
  * This class displays the judge.txt & events.txt files
  * in the GUI. 
  *
- * @author Cynthia and Tung
+ * @author Cynthia
+ * @author Tung
  */
 
 public class DisplayFile {
 	DisplayFile() {}
 	
+	/**
+	 * Opens a file and returns the contents as an ArrayList.
+	 * 
+	 * @param file The file to be opened
+	 * @return Contents of file as ArrayList
+	 * @throws IOException
+	 */
 	public ArrayList<String> OpenFile(File file) throws IOException {
 		ArrayList<String> input = new ArrayList<>();
 		String data;
@@ -33,6 +41,12 @@ public class DisplayFile {
 		return input;
 	}
 	
+	/**
+	 * Returns the table model to be used to display the file contents.
+	 * 
+	 * @param file The file to be opened.
+	 * @return table model of file contents.
+	 */
 	public DefaultTableModel getModel(File file){
 		ArrayList<String> test = null;
 		boolean isJudge = (file.getName().equals("judge.txt")) ? true : false;
@@ -40,7 +54,6 @@ public class DisplayFile {
 		try {
 			test = OpenFile(file);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		String[] judgeColumns = new String[] {
