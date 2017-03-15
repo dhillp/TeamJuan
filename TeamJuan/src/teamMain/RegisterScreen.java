@@ -1,5 +1,8 @@
 package teamMain;
 
+/**
+ * @author Pamaldeep, Harman and Tung
+ */
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;

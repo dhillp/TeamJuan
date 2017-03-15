@@ -1,5 +1,8 @@
 package teamMain;
 
+/**
+ * @author Pamaldeep, Kevin, Tung and Harman
+ */
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
