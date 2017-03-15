@@ -23,11 +23,11 @@ public class RegisterScreen {
 	private JComboBox<Object> myCategoryBox;
 	private JButton mySubmit;
 	private JFrame myFrame;
-	private Person p;
+	private Person myPerson;
 	
 	
-	public RegisterScreen(Person p) {
-		this.p = p;
+	public RegisterScreen(Person thePerson) {
+		myPerson = thePerson;
 		myFrame = new JFrame();
 		myFrame.setTitle("Register for Event");
 		myFrame.setSize(650, 250);
@@ -70,11 +70,11 @@ public class RegisterScreen {
     	mySubmit.setEnabled(true);
     	mySubmit.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent theEvent) {
-    			if(p.personType.equals("Judge")) {
+    			if(myPerson.personType.equals("Judge")) {
     				JOptionPane.showMessageDialog(myFrame, "Judges cannot register for event.");
     				
     			} else {
-    				new EventRegistration(p.firstName, p.lastName, p.email, getEvent());
+    				new EventRegistration(myPerson.firstName, myPerson.lastName, myPerson.email, getEvent());
     			}
 				myFrame.dispose();
     		}

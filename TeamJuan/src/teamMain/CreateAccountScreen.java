@@ -46,8 +46,8 @@ public class CreateAccountScreen {
 	private ArrayList<Person> myCandidates;
 	private static ButtonGroup myRadioButtonGroup = new ButtonGroup();
 	
-	public CreateAccountScreen(ArrayList<Person> myCandidates) {
-		this.myCandidates = myCandidates;
+	public CreateAccountScreen(ArrayList<Person> theCandidates) {
+		myCandidates = theCandidates;
 		myFrame = new JFrame();
 		myFrame.setTitle("Create Account");
 		myFrame.setSize(650, 250);
@@ -140,7 +140,6 @@ public class CreateAccountScreen {
     			System.out.println(getFirstName());
     			System.out.println(getLastName());
     			System.out.println(getEmail());
-    			//reading();
 				writeFile();
     			
 				myTimer.stop();
