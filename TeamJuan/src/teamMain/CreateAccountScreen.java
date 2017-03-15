@@ -1,6 +1,8 @@
 package teamMain;
 
 /**
+ * GUI for creating an account.
+ * 
  * @author Pamaldeep, Kevin, Tung and Harman
  */
 import java.awt.BorderLayout;
@@ -50,8 +52,10 @@ public class CreateAccountScreen {
 	private static ButtonGroup myRadioButtonGroup = new ButtonGroup();
 	
 	/**
+	 * Constructor for the GUI.
+	 * 
 	 * @author Pamaldeep
-	 * @param theCandidates
+	 * @param theCandidates ArrayList of all people that have an account.
 	 */
 	public CreateAccountScreen(ArrayList<Person> theCandidates) {
 		myCandidates = theCandidates;
@@ -74,6 +78,8 @@ public class CreateAccountScreen {
 	}
 	
 	/**
+	 * Creates panels for the GUI frame.
+	 * 
 	 * @author Pamaldeep and Tung
 	 */
 	private void createPanel() {
@@ -141,6 +147,8 @@ public class CreateAccountScreen {
 	}
 	
 	/**
+	 * Creates button(s) for GUI frame.
+	 * 
 	 * @author Pamaldeep
 	 */
 	private void createButtons() {
@@ -162,6 +170,10 @@ public class CreateAccountScreen {
     }
 	
 	/**
+	 * Creates a timer that updates the submit button if valid
+	 * info is entered in the fields and displays a warning
+	 * message if email has already been registered.
+	 * 
 	 * @author Pamaldeep and Kevin
 	 */
 	private void createTimer() {
@@ -232,6 +244,7 @@ public class CreateAccountScreen {
 	
 	/**
 	 * Saves account registration information to database(text file).
+	 * 
 	 * @author Harman
 	 */
 	public static void writeFile(){
@@ -254,8 +267,10 @@ public class CreateAccountScreen {
     }
     
 	/**
+	 * Returns the selection (judge or attendee) made by the user.
+	 * 
 	 * @author Tung
-	 * @return
+	 * @return a string specifying whether person is judge or attendee
 	 */
 	private static String getRadioButtonSelected() {
 		String buttonText = "";
@@ -270,24 +285,30 @@ public class CreateAccountScreen {
 	}
 	
 	/**
+	 * Returns user's first name
+	 * 
 	 * @author Kevin
-	 * @return
+	 * @return user's first name as string
 	 */
     private static String getFirstName() {
     	return myFirstName.getText().toString();
     }
     
     /**
+     * Returns user's last name
+     * 
      * @author Kevin
-     * @return
+     * @return user's last name as string
      */
     private static String getLastName() {
     	return myLastName.getText().toString();
     }
     
     /**
+     * Returns user's email
+     * 
      * @author Kevin
-     * @return
+     * @return user's email as string
      */
     private static String getEmail() {
     	return myEmail.getText().toString();
@@ -295,9 +316,10 @@ public class CreateAccountScreen {
     
     /**
      * Checks if email is already registered.
+     * 
      * @author Tung
-     * @param theEmail
-     * @return
+     * @param theEmail email string to be checked for
+     * @return true if email is taken, false otherwise
      * @throws FileNotFoundException
      */
     private boolean emailTaken(String theEmail) throws FileNotFoundException {
