@@ -35,8 +35,7 @@ public class RegisterScreen {
 	 * Constructs the GUI.
 	 * 
 	 * @author Pamaldeep
-	 * @param thePerson
-	 *            user that is logged in.
+	 * @param thePerson user that is logged in.
 	 */
 	public RegisterScreen(Person thePerson) {
 		myPerson = thePerson;

@@ -59,8 +59,7 @@ public class CreateAccountScreen {
 	 * Constructor for the GUI.
 	 * 
 	 * @author Pamaldeep
-	 * @param theCandidates
-	 *            ArrayList of all people that have an account.
+	 * @param theCandidates ArrayList of all people that have an account.
 	 */
 	public CreateAccountScreen(ArrayList<Person> theCandidates) {
 		myCandidates = theCandidates;
@@ -289,8 +288,7 @@ public class CreateAccountScreen {
 	 * 
 	 * @author Tung
 	 * @author Kevin
-	 * @param theEmail
-	 *            email string to be checked for
+	 * @param theEmail email string to be checked for
 	 * @return true if email is taken, false otherwise
 	 * @throws FileNotFoundException
 	 */

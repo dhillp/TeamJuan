@@ -29,10 +29,8 @@ public class ListScreen {
 	/**
 	 * Constructor that creates the GUI.
 	 * 
-	 * @param file
-	 *            File to be displayed.
-	 * @param name
-	 *            Name of the window.
+	 * @param file File to be displayed.
+	 * @param name Name of the window.
 	 * @throws IOException
 	 */
 	public ListScreen(File file, String name) throws IOException {

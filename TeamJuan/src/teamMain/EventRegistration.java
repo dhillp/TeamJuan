@@ -20,14 +20,10 @@ public class EventRegistration {
 	/**
 	 * Constructor.
 	 * 
-	 * @param first
-	 *            First name of user.
-	 * @param last
-	 *            Last name of user.
-	 * @param event
-	 *            The event user is registering for.
-	 * @param email
-	 *            User's email.
+	 * @param first First name of user.
+	 * @param last Last name of user.
+	 * @param event The event user is registering for.
+	 * @param email User's email.
 	 */
 	public EventRegistration(String first, String last, String event, String email) {
 		myFirst = first;

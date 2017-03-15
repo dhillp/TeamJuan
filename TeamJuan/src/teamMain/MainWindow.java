@@ -40,8 +40,7 @@ public final class MainWindow {
 	 * Constructor for the GUI window.
 	 * 
 	 * @author Pamaldeep
-	 * @param thePerson
-	 *            the user that is logged in.
+	 * @param thePerson the user that is logged in.
 	 */
 	public MainWindow(Person thePerson) {
 		myPerson = thePerson;

@@ -21,8 +21,7 @@ public class ReadFile {
 	/**
 	 * Reads a file and outputs an arraylist of file contents.
 	 * 
-	 * @param file
-	 *            File to be opened.
+	 * @param file File to be opened.
 	 * @return ArrayList of file contents.
 	 * @throws FileNotFoundException
 	 */

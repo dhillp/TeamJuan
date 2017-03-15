@@ -5,12 +5,23 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Reads Events from file for Register Screen
+ * 
+ * @author Cynthia
+ * @author Kevin
+ */
 public class readEvents {
 
 	readEvents() {
 
 	}
-
+	
+	/**
+	 * Returns an ArrayList of all the events in the events file.
+	 * 
+	 * @return ArrayList of events from file
+	 */
 	public ArrayList<String> getdata() {
 
 		ArrayList<String> eventsList = new ArrayList<String>();

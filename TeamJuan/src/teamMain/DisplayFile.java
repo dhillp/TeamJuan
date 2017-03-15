@@ -21,8 +21,7 @@ public class DisplayFile {
 	/**
 	 * Opens a file and returns the contents as an ArrayList.
 	 * 
-	 * @param file
-	 *            The file to be opened
+	 * @param file The file to be opened
 	 * @return Contents of file as ArrayList
 	 * @throws IOException
 	 */
@@ -44,8 +43,7 @@ public class DisplayFile {
 	/**
 	 * Returns the table model to be used to display the file contents.
 	 * 
-	 * @param file
-	 *            The file to be opened.
+	 * @param file The file to be opened.
 	 * @return table model of file contents.
 	 */
 	public DefaultTableModel getModel(File file) {
