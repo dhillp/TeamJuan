@@ -30,12 +30,13 @@ public class RegisterScreen {
 	private JButton mySubmit;
 	private JFrame myFrame;
 	private Person myPerson;
-	
+
 	/**
 	 * Constructs the GUI.
 	 * 
 	 * @author Pamaldeep
-	 * @param thePerson user that is logged in.
+	 * @param thePerson
+	 *            user that is logged in.
 	 */
 	public RegisterScreen(Person thePerson) {
 		myPerson = thePerson;
@@ -48,7 +49,7 @@ public class RegisterScreen {
 				SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
 		myFrame.setVisible(true);
 	}
-	
+
 	/**
 	 * Creates the panels that will be added to the GUI frame.
 	 * 
@@ -63,52 +64,53 @@ public class RegisterScreen {
 		readEvents r = new readEvents();
 		myCategoryBox.setModel(new DefaultComboBoxModel<Object>(r.getdata().toArray()));
 		JLabel category = new JLabel("Select Event/Category: ");
-    	
-    	constraint.gridx = 0;
-    	constraint.gridy = 0;
-    	constraint.gridwidth = 1;
-    	panel.add(category, constraint);
-    	constraint.gridx = 1;
-    	constraint.gridy = 0;
-    	constraint.gridwidth = 2;
-    	panel.add(myCategoryBox, constraint);
-    	
-    	createButtons();
-    	JPanel panel2 = new JPanel();
-    	panel2.add(mySubmit);
-    	JPanel panel3 = new JPanel();
-    	myFrame.getContentPane().add(panel3, BorderLayout.NORTH);
-    	myFrame.getContentPane().add(panel, BorderLayout.CENTER);
-    	myFrame.getContentPane().add(panel2, BorderLayout.SOUTH);
+
+		constraint.gridx = 0;
+		constraint.gridy = 0;
+		constraint.gridwidth = 1;
+		panel.add(category, constraint);
+		constraint.gridx = 1;
+		constraint.gridy = 0;
+		constraint.gridwidth = 2;
+		panel.add(myCategoryBox, constraint);
+
+		createButtons();
+		JPanel panel2 = new JPanel();
+		panel2.add(mySubmit);
+		JPanel panel3 = new JPanel();
+		myFrame.getContentPane().add(panel3, BorderLayout.NORTH);
+		myFrame.getContentPane().add(panel, BorderLayout.CENTER);
+		myFrame.getContentPane().add(panel2, BorderLayout.SOUTH);
 	}
-	
+
 	/**
 	 * Creates buttons for the GUI.
 	 * 
 	 * @author Harman
 	 */
 	private void createButtons() {
-    	mySubmit = new JButton("Submit");
-    	mySubmit.setEnabled(true);
-    	mySubmit.addActionListener(new ActionListener() {
-    		public void actionPerformed(ActionEvent theEvent) {
-    			if(myPerson.personType.equals("Judge")) {
-    				JOptionPane.showMessageDialog(myFrame, "Judges cannot register for event.");
-    				
-    			} else {
-    				new EventRegistration(myPerson.firstName, myPerson.lastName, myPerson.email, getEvent());
-    			}
+		mySubmit = new JButton("Submit");
+		mySubmit.setEnabled(true);
+		mySubmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent theEvent) {
+				if (myPerson.personType.equals("Judge")) {
+					JOptionPane.showMessageDialog(myFrame, "Judges cannot register for event.");
+
+				} else {
+					new EventRegistration(myPerson.firstName, myPerson.lastName, myPerson.email, getEvent());
+				}
 				myFrame.dispose();
-    		}
-    	});
-    }
-     /**
-      * Returns the selected event.
-      * 
-      * @author Harman
-      * @return selected event as a string
-      */
-    private String getEvent() {
-    	return myCategoryBox.getSelectedItem().toString();
-    }
+			}
+		});
+	}
+
+	/**
+	 * Returns the selected event.
+	 * 
+	 * @author Harman
+	 * @return selected event as a string
+	 */
+	private String getEvent() {
+		return myCategoryBox.getSelectedItem().toString();
+	}
 }

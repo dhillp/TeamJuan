@@ -28,14 +28,14 @@ import javax.swing.JTextField;
 
 public final class LoginScreen {
 
-	private static final Toolkit KIT = Toolkit.getDefaultToolkit();	
-	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();	
+	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
+	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();
 	private JFrame myFrame;
 	private JButton myLoginButton;
 	private JButton myCreateAccount;
 	private JTextField myEmail;
 	private ArrayList<Person> myCandidates = new ArrayList<>();
-	
+
 	/**
 	 * GUI constructor.
 	 * 
@@ -53,7 +53,7 @@ public final class LoginScreen {
 				SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
 		myFrame.setVisible(true);
 	}
-	
+
 	/**
 	 * Creates panels to be added to the GUI frame.
 	 * 
@@ -71,12 +71,12 @@ public final class LoginScreen {
 		c.gridwidth = 1;
 		panel.add(email, c);
 		c.gridx = 1;
-		c.gridy = 0; 
+		c.gridy = 0;
 		c.gridwidth = 2;
 		panel.add(myEmail, c);
 		JPanel panel2 = new JPanel();
 		myLoginButton = new JButton("Login");
-		
+
 		myLoginButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -87,20 +87,20 @@ public final class LoginScreen {
 							new MainWindow(myCandidates.get(i));
 							myFrame.dispose();
 							return;
-						} 
+						}
 					}
 					JOptionPane.showMessageDialog(myFrame, "Email not registered or it was entered incorrectly.");
-				} 
+				}
 
 			}
 		});
 		panel2.add(myLoginButton);
 		myCreateAccount = new JButton("Create Account");
-		myCreateAccount.addActionListener( new ActionListener() {
+		myCreateAccount.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new CreateAccountScreen(myCandidates);
-				
+
 			}
 		});
 		panel2.add(myCreateAccount);
@@ -109,19 +109,19 @@ public final class LoginScreen {
 	}
 
 	/**
-	 * Read's user data and separates the information into a Person object. 
-	 * A list stores each candidate's info in a person object. 
-	 * This is to make the code more modular and also decouples the code.
+	 * Read's user data and separates the information into a Person object. A
+	 * list stores each candidate's info in a person object. This is to make the
+	 * code more modular and also decouples the code.
 	 * 
 	 * @author Cynthia
 	 * @author Kevin
 	 */
 	public void readUserInfo() {
-		//myCandidates = new ArrayList<Person>();
+		// myCandidates = new ArrayList<Person>();
 		try {
 			ArrayList<String> usrData = new ReadFile().fileToArray(new File("sysReg.txt"));
 			for (int i = 0; i < usrData.size(); i += 4) {
-				Person p = new Person(usrData.get(i), usrData.get(i+1), usrData.get(i+2), usrData.get(i+3));
+				Person p = new Person(usrData.get(i), usrData.get(i + 1), usrData.get(i + 2), usrData.get(i + 3));
 				myCandidates.add(p);
 			}
 		} catch (FileNotFoundException e) {

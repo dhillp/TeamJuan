@@ -7,24 +7,22 @@ import java.util.ArrayList;
 
 public class readEvents {
 
-	readEvents(){
-		
-	}
-	
-	
-	public ArrayList<String> getdata(){
-		
-		ArrayList<String> eventsList = new ArrayList<String>();
-        try (BufferedReader reader = new BufferedReader(new FileReader("events.txt")))
-        {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                eventsList.add(line);
-            }
+	readEvents() {
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } 
+	}
+
+	public ArrayList<String> getdata() {
+
+		ArrayList<String> eventsList = new ArrayList<String>();
+		try (BufferedReader reader = new BufferedReader(new FileReader("events.txt"))) {
+			String line;
+			while ((line = reader.readLine()) != null) {
+				eventsList.add(line);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return eventsList;
 	}
 }

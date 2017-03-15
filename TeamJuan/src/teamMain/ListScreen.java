@@ -1,4 +1,5 @@
 package teamMain;
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.File;
@@ -12,45 +13,46 @@ import javax.swing.table.DefaultTableModel;
 /**
  * A GUI that shows a table based on the file parameter.
  * 
- * @author Cynthia 
+ * @author Cynthia
  * @author Tung
  *
  */
 
 public class ListScreen {
-	
+
 	private static final Toolkit KIT = Toolkit.getDefaultToolkit();
-	
+
 	private static final Dimension SCREEN_SIZE = KIT.getScreenSize();
-    
-    private JFrame myFrame;
-    
-    /**
-     * Constructor that creates the GUI.
-     * 
-     * @param file File to be displayed.
-     * @param name Name of the window.
-     * @throws IOException
-     */
+
+	private JFrame myFrame;
+
+	/**
+	 * Constructor that creates the GUI.
+	 * 
+	 * @param file
+	 *            File to be displayed.
+	 * @param name
+	 *            Name of the window.
+	 * @throws IOException
+	 */
 	public ListScreen(File file, String name) throws IOException {
-		
+
 		myFrame = new JFrame();
 		myFrame.setTitle(name);
 		myFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		myFrame.setSize(500, 500);
-		
+
 		DisplayFile r = new DisplayFile();
-		
+
 		DefaultTableModel model = r.getModel(file);
-	    JTable table = new JTable();
+		JTable table = new JTable();
 
-	    table.setModel(model);
+		table.setModel(model);
 
-	    myFrame.add(new JScrollPane(table));
+		myFrame.add(new JScrollPane(table));
 		myFrame.setLocation(SCREEN_SIZE.width / 2 - myFrame.getWidth() / 2,
-                SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
+				SCREEN_SIZE.height / 2 - myFrame.getHeight() / 2);
 		myFrame.setVisible(true);
-    }
-	
-	
+	}
+
 }
