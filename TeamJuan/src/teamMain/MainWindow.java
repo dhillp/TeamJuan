@@ -17,7 +17,7 @@ import javax.swing.JPanel;
  * Main application window that you see after logging in.
  * 
  * @author Pamaldeep
- * @author Cynthia
+ * @author Tung
  */
 
 public final class MainWindow {
@@ -73,8 +73,7 @@ public final class MainWindow {
 	/**
 	 * Creates buttons that are added to the GUI.
 	 * 
-	 * @author Pamaldeep
-	 * @author Cynthia
+	 * @author Tung
 	 */
 	private void createButtons() {
 		myUpcomingButton = new JButton("Upcoming Events");

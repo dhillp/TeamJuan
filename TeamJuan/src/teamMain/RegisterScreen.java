@@ -52,8 +52,8 @@ public class RegisterScreen {
 	/**
 	 * Creates the panels that will be added to the GUI frame.
 	 * 
-	 * @author Pamaldeep
 	 * @author Harman
+	 * Edited by Pamaldeep
 	 */
 	private void createPanel() {
 		JPanel panel = new JPanel(new GridBagLayout());

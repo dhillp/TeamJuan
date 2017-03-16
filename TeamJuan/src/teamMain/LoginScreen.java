@@ -114,10 +114,9 @@ public final class LoginScreen {
 	 * code more modular and also decouples the code.
 	 * 
 	 * @author Cynthia
-	 * @author Kevin
+	 * Edited by Kevin
 	 */
 	public void readUserInfo() {
-		// myCandidates = new ArrayList<Person>();
 		try {
 			ArrayList<String> usrData = new ReadFile().fileToArray(new File("sysReg.txt"));
 			for (int i = 0; i < usrData.size(); i += 4) {

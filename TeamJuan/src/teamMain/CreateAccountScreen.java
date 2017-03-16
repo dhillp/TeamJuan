@@ -85,7 +85,7 @@ public class CreateAccountScreen {
 	 * Creates panels for the GUI frame.
 	 * 
 	 * @author Pamaldeep
-	 * @author Tung
+	 * Edited by Tung
 	 */
 	private void createPanel() {
 		JPanel panel = new JPanel(new GridBagLayout());
@@ -155,6 +155,7 @@ public class CreateAccountScreen {
 	 * Creates button(s) for GUI frame.
 	 * 
 	 * @author Pamaldeep
+	 * Edited by Kevin
 	 */
 	private void createButtons() {
 		mySubmit = new JButton("Submit");
@@ -175,8 +176,8 @@ public class CreateAccountScreen {
 	 * in the fields and displays a warning message if email has already been
 	 * registered.
 	 * 
-	 * @author Pamaldeep
 	 * @author Kevin
+	 * Edited by Pamaldeep
 	 */
 	private void createTimer() {
 		myTimer = new Timer(100, new ActionListener() {
@@ -195,9 +196,9 @@ public class CreateAccountScreen {
 					e.printStackTrace();
 				}
 				try {
-					if (!emailTaken(myEmail.getText()) && myEmail.getText().length() > 0
-							&& myFirstName.getText().length() > 0 && myLastName.getText().length() > 0
-							&& myFirstName.getText().length() <= 20 && myLastName.getText().length() <= 20) {
+					if (!emailTaken(getEmail()) && getEmail().length() > 0
+							&& getFirstName().length() > 0 && getLastName().length() > 0
+							&& getFirstName().length() <= 20 && getLastName().length() <= 20) {
 
 						mySubmit.setEnabled(true);
 					} else {
@@ -215,6 +216,7 @@ public class CreateAccountScreen {
 	 * Saves account registration information to database(text file).
 	 * 
 	 * @author Harman
+	 * Edited by Kevin
 	 */
 	public static void writeFile() {
 		String fileName = "sysReg.txt";
@@ -283,7 +285,7 @@ public class CreateAccountScreen {
 	 * Checks if email is already registered.
 	 * 
 	 * @author Tung
-	 * @author Kevin
+	 * Edited by Kevin
 	 * @param theEmail email string to be checked for
 	 * @return true if email is taken, false otherwise
 	 * @throws FileNotFoundException

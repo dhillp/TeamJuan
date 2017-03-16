@@ -9,7 +9,6 @@ import java.util.ArrayList;
  * Reads Events from file for Register Screen
  * 
  * @author Cynthia
- * @author Kevin
  */
 public class readEvents {
 

@@ -9,8 +9,7 @@ import java.util.Scanner;
  * This class' main function is to output an ArrayList given a file and
  * separates each item in the file into the array using the String regex ','
  * 
- * @author Cynthia
- * @author Kevin
+ * @author Harman
  */
 
 public class ReadFile {
