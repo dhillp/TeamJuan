@@ -22,8 +22,6 @@ public class Test {
 	/**
 	 * Tests for Person class
 	 *  @author Cynthia
-	 *  @author Kevin
- 	 *  @author Harman
 	 */
 	@org.junit.Test
 	public void testPerson() {
@@ -41,8 +39,6 @@ public class Test {
 	 * @throws IOException 
 	 * 
 	 * @author Cynthia
-     * @author Pamaldeep
-     * @author Tung
 	 */
 	@org.junit.Test
 	public void testReadFile() throws FileNotFoundException {
