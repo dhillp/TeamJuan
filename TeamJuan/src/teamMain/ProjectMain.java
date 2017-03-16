@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 /**
  * Driver for the application.
  * 
+ * Authors for entire project:
  * @author Cynthia
  * @author Harman
  * @author Kevin
