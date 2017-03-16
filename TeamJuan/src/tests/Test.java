@@ -41,7 +41,7 @@ public class Test {
 	 * @throws IOException 
 	 * 
 	 * @author Cynthia
-     * @author Palmadeep
+     * @author Pamaldeep
      * @author Tung
 	 */
 	@org.junit.Test
