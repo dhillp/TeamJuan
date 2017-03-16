@@ -1,3 +1,4 @@
 team,juan,tj@gmail.com,Attendee
 John,Smith,jsmith@gmail.com,Attendee
 tFirst,tLast,tEmail@email.com,Attendee
+Sharon,Clink,sclink@gmail.com,Judge
