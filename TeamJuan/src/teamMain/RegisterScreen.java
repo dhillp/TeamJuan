@@ -92,11 +92,11 @@ public class RegisterScreen {
 		mySubmit.setEnabled(true);
 		mySubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent theEvent) {
-				if (myPerson.personType.equals("Judge")) {
+				if (myPerson.getPersonType().equals("Judge")) {
 					JOptionPane.showMessageDialog(myFrame, "Judges cannot register for event.");
 
 				} else {
-					new EventRegistration(myPerson.firstName, myPerson.lastName, myPerson.email, getEvent());
+					new EventRegistration(myPerson.getFirstName(), myPerson.getLastName(), myPerson.getEmail(), getEvent());
 				}
 				myFrame.dispose();
 			}

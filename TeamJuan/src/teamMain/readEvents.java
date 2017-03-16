@@ -29,7 +29,6 @@ public class readEvents {
 			while ((line = reader.readLine()) != null) {
 				eventsList.add(line);
 			}
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
