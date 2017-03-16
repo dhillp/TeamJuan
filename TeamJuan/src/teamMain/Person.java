@@ -7,10 +7,10 @@ package teamMain;
  */
 
 public class Person {
-	protected String firstName;
-	protected String lastName;
-	protected String email;
-	protected String personType;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String personType;
 	
 	/**
 	 * Constructor.
@@ -21,10 +21,51 @@ public class Person {
 	 * @param theType The type of user (judge/attendee).
 	 */
 	public Person(String firstName, String lastName, String email, String theType) {
+		this.setFirstName(firstName);
+		this.setLastName(lastName);
+		this.setEmail(email);
+		setPersonType(theType);
+	}
+
+	
+	//Getter for firstName
+	public String getFirstName() {
+		return firstName;
+	}
+
+	//Setter for firstName
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	//Getter for lastName
+	public String getLastName() {
+		return lastName;
+	}
+	
+	//Setter for firstName
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	//Getter for email
+	public String getEmail() {
+		return email;
+	}
+
+	//Setter for email
+	public void setEmail(String email) {
 		this.email = email;
-		personType = theType;
+	}
+
+	//Getter for personType
+	public String getPersonType() {
+		return personType;
+	}
+
+	//Setter for personType
+	public void setPersonType(String personType) {
+		this.personType = personType;
 	}
 
 }

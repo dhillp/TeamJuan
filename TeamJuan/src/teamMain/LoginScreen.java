@@ -83,7 +83,7 @@ public final class LoginScreen {
 				String email = myEmail.getText();
 				if (!email.equals("")) {
 					for (int i = 0; i < myCandidates.size(); i++) {
-						if (email.equals(myCandidates.get(i).email)) {
+						if (email.equals(myCandidates.get(i).getEmail())) {
 							new MainWindow(myCandidates.get(i));
 							myFrame.dispose();
 							return;

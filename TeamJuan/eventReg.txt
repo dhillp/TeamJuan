@@ -3,3 +3,4 @@ John,Smith,Ideal Weaving Show, November 4,jsmith@gmail.com
 John,Smith,New Year's Weaving, November 11,jsmith@gmail.com
 tFirst,tLast,Weaving Race,  November 22,tEmail@email.com
 John,Smith,Ideal Weaving Show, November 4,jsmith@gmail.com
+team,juan,Ideal Weaving Show, November 4,tj@gmail.com
